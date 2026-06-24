@@ -1,0 +1,31 @@
+# Release Preflight
+
+This artifact prepares the public repository/DOI route without pretending that a DOI has already been minted.
+
+- Automated checks passed: 9/9
+- Manual release gates retained: 3
+- Manifest rows inspected: 1014
+
+## Checks
+
+| Category | Check | Mode | Status | Evidence | Action |
+|---|---|---|---|---|---|
+| manifest | Checksum manifest exists and is substantial | automated | pass | rows=1014 | Regenerate reproducibility_manifest.csv after final file freeze. |
+| redistribution | Manifest excludes raw third-party datasets | automated | pass | raw paths tracked=0 | Remove raw third-party data from public deposit unless redistribution rights are confirmed. |
+| redistribution | Manifest excludes bulky generated-map/run folders | automated | pass | bulky paths tracked=0 | Represent bulky outputs with metrics, summaries, contact sheets, or restricted reviewer material. |
+| data_sources | Data-source manifest covers the three empirical artifact families | automated | pass | all core sources documented | Update DATA_SOURCES.md before release. |
+| environment | Minimal and optional environment manifests exist | automated | pass | minimal=True; optional=True | Keep dependency files in the public release. |
+| metadata | Release metadata draft files exist | automated | pass | zenodo, citation, codemeta, checklist | Replace TODO fields before public deposit. |
+| policy | Release plan records source-linking rule for third-party data | automated | pass | third-party data rule present | Keep this rule visible in the public repository README or release notes. |
+| license | Release-license matrix separates author-controlled and third-party artifacts | automated | pass | rows=9 | Use release_license_audit before choosing the final top-level code/data license. |
+| release_skeleton | Public release skeleton separates included artifacts from third-party exclusions | automated | pass | public_release_skeleton present | Keep the skeleton in the public repository root or release notes and replace only final DOI/license metadata after the route is chosen. |
+| manual_gate | Final public repository URL | manual | manual | Repository URL is intentionally TODO until the public release exists. | Create release repository and update metadata immediately before submission. |
+| manual_gate | Final DOI | manual | manual | DOI is intentionally TODO until archive deposit is minted. | Mint DOI through the chosen archive and update manuscript metadata. |
+| manual_gate | License decision | manual | manual | Final author-selected license is intentionally TODO; release-license audit now records third-party redistribution constraints. | Choose top-level code/evidence license, keep third-party data source-linked/restricted as documented, then update metadata. |
+
+## Draft Metadata Files
+
+- `zenodo_metadata_draft.json`
+- `CITATION.cff`
+- `codemeta_draft.json`
+- `doi_release_checklist.md`

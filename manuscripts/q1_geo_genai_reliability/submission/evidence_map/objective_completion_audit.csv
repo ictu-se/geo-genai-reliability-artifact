@@ -1,0 +1,8 @@
+Requirement key,Requirement,Status,Authoritative evidence,Remaining gap
+about_30_pages,Q1-journal manuscript track,incomplete_or_unverified,submission/main_text_compression_plan.md; notes/page_budget_audit.md,Compact manuscript exists with a main/supplement split; final template may still require tightening.
+reproducibility_audit,Reproducibility audit,evidence_present,"Tables 1, 2, 8; DATA_SOURCES; release plan; citation verification",Final DOI/public repository still pending.
+caption_fidelity,Caption fidelity experiment,evidence_present,"Tables 9, 15, 15b, 15c, 21, 22; proxy/VLM/CLIP outputs",Human labels remain open.
+choropleth_qa_repair,Choropleth code-generation QA and repair,evidence_present,"Tables 10, 13, 16, 19, 20; run logs; safety scans; screenshot QA",Broader matched repair-model suite remains a strengthening step.
+scgm_reproduction,SCGM tile continuity/reproduction,evidence_present,"Tables 4, 5, 5b, 5c, 5d; Figure 9; SCGM generated outputs; mosaic seam audit; official-reproduction readiness audit and run contract",Official/cascade-conditioned diffusion reproduction still not complete; checkpoint/runtime/output-generation blockers remain explicit after the run contract.
+cross_paradigm,Cross-paradigm evaluation,evidence_present,"Tables 11, 17, 23; cross-paradigm matrix",Diagnostic scores may benefit from expert validation before final submission.
+submission_packaging,Submission-ready package controls,evidence_present,submission package audit; selected journal checklist; journal style preflight; release preflight; reproduction runbook; abstract pack; blinded manuscript,"Journal-native formatting, final DOI, and final non-blinded metadata remain manual."

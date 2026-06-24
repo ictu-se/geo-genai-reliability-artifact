@@ -1,0 +1,4 @@
+Repair model,Matched cases,Attempt rows,Safe attempts,Unsafe attempts,Completed cases,Completion rate,Mean final score,Mean best score,Completed by iteration,Top remaining failed checks
+qwen2.5-coder:14b,8,14,14,0,3,3/8,0.829,0.829,iter 1: 2; iter 2: 1,execution_success: 9; static_png: 6; diagnostic_json: 5
+qwen2.5-coder:7b,8,14,14,0,3,3/8,0.808,0.808,iter 1: 2; iter 2: 1,execution_success: 9; diagnostic_json: 7; static_png: 5
+deepseek-coder:6.7b,8,10,4,6,0,0/8,0.204,0.204,none,unsafe:syntax_error:invalid syntax: 5; static_png: 2; execution_success: 2; diagnostic_json: 1

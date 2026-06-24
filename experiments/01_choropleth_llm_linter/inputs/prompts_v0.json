@@ -1,0 +1,28 @@
+[
+  {
+    "id": "P01_static_basic",
+    "task": "static_choropleth",
+    "prompt": "Use Python, GeoPandas, and Matplotlib to create a static choropleth map of mainland Portugal using mainlandburn.shp. Color districts by Burned_Are. Add a title, legend, district borders, and data source note. Save the map as PNG."
+  },
+  {
+    "id": "P02_static_with_crs_repair",
+    "task": "static_choropleth",
+    "prompt": "Use Python, GeoPandas, and Matplotlib to create a static choropleth map of mainland Portugal using mainlandburn.shp. The shapefile may not declare a CRS, so inspect the bounds and set the correct CRS before rendering. Color districts by Burned_Are with five quantile classes. Add title, legend, district borders, and source note. Save the map as PNG."
+  },
+  {
+    "id": "P03_interactive_basic",
+    "task": "interactive_choropleth",
+    "prompt": "Use Python, GeoPandas, and Folium to create an interactive choropleth map of mainland Portugal using mainlandburn.shp. Color districts by Burned_Are, add tooltip fields for Region, Burned_Are, and of_Fires, and save as HTML."
+  },
+  {
+    "id": "P04_csv_time_series",
+    "task": "time_series",
+    "prompt": "Use Python and Pandas to read MCD64.006.yearly-ba-nf.2002-2022.PRT_Portugal.csv. Plot annual burned area and number of fires from 2002 to 2022, report the year with maximum burned area, and save the plot as PNG."
+  },
+  {
+    "id": "P05_robust_cartographic_output",
+    "task": "robust_choropleth",
+    "prompt": "Create both a static PNG and interactive HTML choropleth for mainland Portugal. Use mainlandburn.shp, repair missing CRS if needed, validate geometries, classify Burned_Are into five quantile classes, use a sequential color ramp, and include title, legend, borders, tooltip, and source note. Also print a short report of missing values and invalid geometries."
+  }
+]
+

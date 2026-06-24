@@ -1,0 +1,5 @@
+Artifact,File,Exists,Bytes,Validation note
+static choropleth PNG,map_static.png,True,307172,mainland CRS None -> EPSG:4326
+interactive Folium HTML,map_interactive.html,True,25051271,18 district features with tooltips
+annual time-series PNG,time_series.png,True,167977,2002-2022; max burned area year 2017
+diagnostic JSON,diagnostics.json,True,1334,boundary invalid geometries 1 -> 0

@@ -1,0 +1,31 @@
+{
+  "title": "From Map-Like Images to Trustworthy Cartographic Artifacts: A Cross-Paradigm Reliability Audit of Geo-Generative AI",
+  "upload_type": "dataset",
+  "description": "Reproducibility package for a Geo-GenAI map-generation reliability manuscript. The deposit is intended to include project-created scripts, derived CSV/JSON summaries, manuscript tables, figures, prompts, safety scans, and QA ledgers. Raw third-party datasets should be source-linked unless redistribution rights are confirmed.",
+  "creators": [
+    {
+      "name": "TODO: Author Name",
+      "affiliation": "TODO: Affiliation",
+      "orcid": "TODO: ORCID or remove"
+    }
+  ],
+  "keywords": [
+    "GeoAI",
+    "generative AI",
+    "cartography",
+    "map generation",
+    "reproducibility",
+    "remote sensing",
+    "choropleth maps"
+  ],
+  "license": "TODO: choose a code/data license after checking third-party constraints",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "TODO: manuscript DOI or preprint URL",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    }
+  ],
+  "notes": "Do not upload raw third-party data unless redistribution rights are explicitly confirmed."
+}

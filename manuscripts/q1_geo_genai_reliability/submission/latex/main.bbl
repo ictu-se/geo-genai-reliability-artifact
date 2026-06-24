@@ -1,0 +1,218 @@
+\begin{thebibliography}{39}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\normalfont{#1}}
+\providecommand{\urlprefix}{Available from: }
+
+\bibitem[Burghardt\emph{ et~al.}(2025)]{Burghardt2025PictorialMaps}
+Burghardt, D., \emph{et~al.}, 2025. Applications of generative methods in
+  cartography on the example of creating pictorial maps. \emph{Abstracts of the
+  International Cartographic Association}, 10, 27.
+  \urlprefix\url{https://doi.org/10.5194/ica-abs-10-27-2025}.
+
+\bibitem[Deng\emph{ et~al.}(2009)]{Deng2009ImageNet}
+Deng, J., \emph{et~al.}, 2009. Imagenet: A large-scale hierarchical image
+  database. \emph{In}: \emph{2009 IEEE Conference on Computer Vision and
+  Pattern Recognition}.  248--255.
+  \urlprefix\url{https://doi.org/10.1109/CVPR.2009.5206848}.
+
+\bibitem[Gebru\emph{ et~al.}(2021)]{Gebru2021Datasheets}
+Gebru, T., \emph{et~al.}, 2021. Datasheets for datasets. \emph{Communications
+  of the ACM}, 64 (12),  86--92.
+  \urlprefix\url{https://doi.org/10.1145/3458723}.
+
+\bibitem[Goodchild(2007)]{Goodchild2007CitizensSensors}
+Goodchild, M.F., 2007. Citizens as sensors: the world of volunteered geography.
+  \emph{GeoJournal}, 69 (4),  211--221.
+  \urlprefix\url{https://doi.org/10.1007/s10708-007-9111-y}.
+
+\bibitem[Goodchild(1992)]{Goodchild1992GIScience}
+Goodchild, M.F., 1992. Geographical information science. \emph{International
+  Journal of Geographical Information Systems}, 6 (1),  31--45.
+  \urlprefix\url{https://doi.org/10.1080/02693799208901893}.
+
+\bibitem[Harris\emph{ et~al.}(2020)]{Harris2020Numpy}
+Harris, C.R., \emph{et~al.}, 2020. Array programming with numpy. \emph{Nature},
+  585 (7825),  357--362.
+  \urlprefix\url{https://doi.org/10.1038/s41586-020-2649-2}.
+
+\bibitem[Harrower and Brewer(2003)]{HarrowerBrewer2003ColorBrewer}
+Harrower, M. and Brewer, C.A., 2003. Colorbrewer.org: an online tool for
+  selecting colour schemes for maps. \emph{The Cartographic Journal}, 40 (1),
+  27--37. \urlprefix\url{https://doi.org/10.1179/000870403235002042}.
+
+\bibitem[Heusel\emph{ et~al.}(2017)]{Heusel2017FID}
+Heusel, M., \emph{et~al.}, 2017. Gans trained by a two time-scale update rule
+  converge to a local nash equilibrium. \emph{In}: \emph{Advances in Neural
+  Information Processing Systems}. vol.~30.
+
+\bibitem[Hunter(2007)]{Hunter2007Matplotlib}
+Hunter, J.D., 2007. Matplotlib: A 2d graphics environment. \emph{Computing in
+  Science and Engineering}, 9 (3),  90--95.
+  \urlprefix\url{https://doi.org/10.1109/MCSE.2007.55}.
+
+\bibitem[Janowicz\emph{ et~al.}(2020)]{Janowicz2020GeoAI}
+Janowicz, K., \emph{et~al.}, 2020. Geoai: spatially explicit artificial
+  intelligence techniques for geographic knowledge discovery and beyond.
+  \emph{International Journal of Geographical Information Science}, 34 (4),
+  625--636. \urlprefix\url{https://doi.org/10.1080/13658816.2019.1684500}.
+
+\bibitem[Jordahl\emph{ et~al.}(2020)]{Jordahl2020Geopandas}
+Jordahl, K., \emph{et~al.}, 2020. Geopandas: Python tools for geographic data.
+  \emph{In}: \emph{Proceedings of the 19th Python in Science Conference}.
+  79--86. \urlprefix\url{https://doi.org/10.25080/Majora-342d178e-00e}.
+
+\bibitem[Kang and Wang(2026)]{KangWang2026GenAICartography}
+Kang, Y. and Wang, C., 2026. Envisioning generative artificial intelligence in
+  cartography: Mapmaking, map use, and ethics. \emph{International Journal of
+  Cartography}, 12 (2),  334--360.
+  \urlprefix\url{https://doi.org/10.1080/23729333.2025.2582231}.
+
+\bibitem[Kausika and van Altena(2025)]{KausikaVanAltena2025GeoAITopographic}
+Kausika, B.B. and van Altena, V., 2025. Geoai in topographic mapping:
+  Navigating the future of opportunities and risks. \emph{ISPRS International
+  Journal of Geo-Information}, 14, 313.
+  \urlprefix\url{https://doi.org/10.3390/ijgi14080313}.
+
+\bibitem[Kirillov\emph{ et~al.}(2023)]{Kirillov2023SAM}
+Kirillov, A., \emph{et~al.}, 2023. Segment anything. \emph{In}: \emph{2023
+  IEEE/CVF International Conference on Computer Vision}.  3992--4003.
+  \urlprefix\url{https://doi.org/10.1109/ICCV51070.2023.00371}.
+
+\bibitem[Li\emph{ et~al.}(2025)]{Li2025CartoDirector}
+Li, P., \emph{et~al.}, 2025. Cartodirector: A geospatial storyteller that
+  converts text into dynamic cartographic transformations using llms.
+  \emph{Abstracts of the International Cartographic Association}, 10, 168.
+  \urlprefix\url{https://doi.org/10.5194/ica-abs-10-168-2025}.
+
+\bibitem[Liu\emph{ et~al.}(2024)]{Liu2024LLaVA}
+Liu, H., \emph{et~al.}, 2024. Visual instruction tuning. \emph{In}:
+  \emph{Advances in Neural Information Processing Systems}. vol.~36.
+
+\bibitem[McKinney(2010)]{McKinney2010Pandas}
+McKinney, W., 2010. Data structures for statistical computing in python.
+  \emph{In}: \emph{Proceedings of the 9th Python in Science Conference}.
+  56--61.
+
+\bibitem[Mitchell\emph{ et~al.}(2019)]{Mitchell2019ModelCards}
+Mitchell, M., \emph{et~al.}, 2019. Model cards for model reporting. \emph{In}:
+  \emph{Proceedings of the Conference on Fairness, Accountability, and
+  Transparency}.  220--229.
+  \urlprefix\url{https://doi.org/10.1145/3287560.3287596}.
+
+\bibitem[Oquab\emph{ et~al.}(2024)]{Oquab2024DINOv2}
+Oquab, M., \emph{et~al.}, 2024. Dinov2: Learning robust visual features without
+  supervision. \emph{Transactions on Machine Learning Research}.
+  \urlprefix\url{https://openreview.net/forum?id=a68SUt6zFt}.
+
+\bibitem[Pannoon and Netek(2025)]{PannoonNetek2025ChoroplethChatGPT}
+Pannoon, P. and Netek, R., 2025. Creating choropleth maps by artificial
+  intelligence: Case study on chatgpt-4. \emph{ISPRS International Journal of
+  Geo-Information}, 14, 486.
+  \urlprefix\url{https://doi.org/10.3390/ijgi14120486}.
+
+\bibitem[Pebesma(2018)]{Pebesma2018SimpleFeatures}
+Pebesma, E., 2018. Simple features for r: standardized support for spatial
+  vector data. \emph{The R Journal}, 10 (1),  439--446.
+  \urlprefix\url{https://doi.org/10.32614/RJ-2018-009}.
+
+\bibitem[Pedregosa\emph{ et~al.}(2011)]{Pedregosa2011ScikitLearn}
+Pedregosa, F., \emph{et~al.}, 2011. Scikit-learn: Machine learning in python.
+  \emph{Journal of Machine Learning Research}, 12,  2825--2830.
+  \urlprefix\url{https://jmlr.org/papers/v12/pedregosa11a.html}.
+
+\bibitem[Peng(2011)]{Peng2011Reproducible}
+Peng, R.D., 2011. Reproducible research in computational science.
+  \emph{Science}, 334 (6060),  1226--1227.
+  \urlprefix\url{https://doi.org/10.1126/science.1213847}.
+
+\bibitem[Radford\emph{ et~al.}(2021)]{Radford2021CLIP}
+Radford, A., \emph{et~al.}, 2021. Learning transferable visual models from
+  natural language supervision. \emph{In}: \emph{Proceedings of the 38th
+  International Conference on Machine Learning}. vol. 139,  8748--8763.
+  \urlprefix\url{https://proceedings.mlr.press/v139/radford21a.html}.
+
+\bibitem[Rombach\emph{ et~al.}(2022)]{Rombach2022LatentDiffusion}
+Rombach, R., \emph{et~al.}, 2022. High-resolution image synthesis with latent
+  diffusion models. \emph{In}: \emph{2022 IEEE/CVF Conference on Computer
+  Vision and Pattern Recognition}.  10674--10685.
+  \urlprefix\url{https://doi.org/10.1109/CVPR52688.2022.01042}.
+
+\bibitem[Sandve\emph{ et~al.}(2013)]{Sandve2013Reproducible}
+Sandve, G.K., \emph{et~al.}, 2013. Ten simple rules for reproducible
+  computational research. \emph{PLoS Computational Biology}, 9 (10), e1003285.
+  \urlprefix\url{https://doi.org/10.1371/journal.pcbi.1003285}.
+
+\bibitem[Song\emph{ et~al.}(2025)]{Song2025LLMAgentVGI}
+Song, J., \emph{et~al.}, 2025. Large language model agent with vgi data for
+  mapping. \emph{Journal of Geodesy and Geoinformation Science}, 8 (2),
+  57--73.
+  \urlprefix\url{https://www.sciopen.com/article/10.11947/j.JGGS.2025.0204}.
+
+\bibitem[Sun\emph{ et~al.}(2025)]{Sun2025GenAIReview}
+Sun, C., \emph{et~al.}, 2025. Generative artificial intelligence and its
+  applications in cartography and gis: An exploratory review. \emph{Journal of
+  Geodesy and Geoinformation Science}, 8 (2),  74--89.
+  \urlprefix\url{https://www.sciopen.com/article/10.11947/j.JGGS.2025.0205}.
+
+\bibitem[Tobler(1970)]{Tobler1970ComputerMovie}
+Tobler, W.R., 1970. A computer movie simulating urban growth in the detroit
+  region. \emph{Economic Geography}, 46,  234--240.
+  \urlprefix\url{https://doi.org/10.2307/143141}.
+
+\bibitem[van~der Walt\emph{ et~al.}(2014)]{VanderWalt2014ScikitImage}
+van~der Walt, S., \emph{et~al.}, 2014. scikit-image: image processing in
+  python. \emph{PeerJ}, 2, e453.
+  \urlprefix\url{https://doi.org/10.7717/peerj.453}.
+
+\bibitem[Virtanen\emph{ et~al.}(2020)]{Virtanen2020Scipy}
+Virtanen, P., \emph{et~al.}, 2020. Scipy 1.0: fundamental algorithms for
+  scientific computing in python. \emph{Nature Methods}, 17 (3),  261--272.
+  \urlprefix\url{https://doi.org/10.1038/s41592-019-0686-2}.
+
+\bibitem[Wang\emph{ et~al.}(2025)]{Wang2025CartoAgent}
+Wang, C., \emph{et~al.}, 2025. Cartoagent: A multimodal large language
+  model-powered multi-agent cartographic framework for map style transfer and
+  evaluation. \emph{International Journal of Geographical Information Science},
+  39 (9),  1904--1937.
+  \urlprefix\url{https://doi.org/10.1080/13658816.2025.2507844}.
+
+\bibitem[Wang\emph{ et~al.}(2004)]{Wang2004SSIM}
+Wang, Z., \emph{et~al.}, 2004. Image quality assessment: from error visibility
+  to structural similarity. \emph{IEEE Transactions on Image Processing}, 13
+  (4),  600--612. \urlprefix\url{https://doi.org/10.1109/TIP.2003.819861}.
+
+\bibitem[Waskom(2021)]{Waskom2021Seaborn}
+Waskom, M.L., 2021. seaborn: statistical data visualization. \emph{Journal of
+  Open Source Software}, 6 (60), 3021.
+  \urlprefix\url{https://doi.org/10.21105/joss.03021}.
+
+\bibitem[Wilkinson\emph{ et~al.}(2016)]{Wilkinson2016FAIR}
+Wilkinson, M.D., \emph{et~al.}, 2016. The fair guiding principles for
+  scientific data management and stewardship. \emph{Scientific Data}, 3 (1),
+  160018. \urlprefix\url{https://doi.org/10.1038/sdata.2016.18}.
+
+\bibitem[Yang\emph{ et~al.}(2025)]{Yang2025MapColorAI}
+Yang, N., \emph{et~al.}, 2025. Mapcolorai: Designing contextually relevant
+  choropleth map color schemes using a large language model. \emph{Cartography
+  and Geographic Information Science}, 53 (4),  479--497.
+  \urlprefix\url{https://doi.org/10.1080/15230406.2025.2531055}.
+
+\bibitem[Zhang\emph{ et~al.}(2023)]{Zhang2023ControlNet}
+Zhang, L., Rao, A., and Agrawala, M., 2023. Adding conditional control to
+  text-to-image diffusion models. \emph{In}: \emph{2023 IEEE/CVF International
+  Conference on Computer Vision}.  3813--3824.
+  \urlprefix\url{https://doi.org/10.1109/ICCV51070.2023.00355}.
+
+\bibitem[Zhang\emph{ et~al.}(2018)]{Zhang2018LPIPS}
+Zhang, R., \emph{et~al.}, 2018. The unreasonable effectiveness of deep features
+  as a perceptual metric. \emph{In}: \emph{2018 IEEE/CVF Conference on Computer
+  Vision and Pattern Recognition}.  586--595.
+  \urlprefix\url{https://doi.org/10.1109/CVPR.2018.00068}.
+
+\bibitem[Zhang\emph{ et~al.}(2025)]{Zhang2025MapGenerator}
+Zhang, W., \emph{et~al.}, 2025. Mapgenerator: A framework for learning a
+  diffusion model for text promptable map generation. \emph{Cartography and
+  Geographic Information Science},  1--23.
+  \urlprefix\url{https://doi.org/10.1080/15230406.2025.2587273}.
+
+\end{thebibliography}

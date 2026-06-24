@@ -1,0 +1,7 @@
+Group,Items,Mean CLIP score,Min CLIP score,Max CLIP score,Proxy-score Pearson r,Note
+overall,200,0.342781,0.260293,0.441454,,model=openai/clip-vit-base-patch32; errors=0
+proxy severity: high,1,0.316893,0.316893,0.316893,,"CLIP is a screening metric, not human ground truth"
+proxy severity: low,112,0.340465,0.260293,0.441454,0.000000,"CLIP is a screening metric, not human ground truth"
+proxy severity: medium,87,0.346061,0.290746,0.418686,0.026007,"CLIP is a screening metric, not human ground truth"
+split: MGEval,100,0.339040,0.260293,0.438895,0.059427,"CLIP is a screening metric, not human ground truth"
+split: MapTrain,100,0.346522,0.275674,0.441454,-0.085032,"CLIP is a screening metric, not human ground truth"

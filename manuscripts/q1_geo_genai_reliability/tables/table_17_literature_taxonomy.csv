@@ -1,0 +1,11 @@
+Work,Paradigm,Generated artifact,Control signal,Evaluation style,Reliability gap
+Affolter et al. 2025,controlled diffusion map tiles,raster map tile,rasterized vector semantics + text style prompt,visual inspection + cartographer user study,"topology, labels, tile seams, GIS integration"
+Sun et al. 2025 SCGM,remote-sensing-to-map diffusion,multi-scale map tile,remote sensing image + scale encoding + cascade references,quantitative image metrics + ablations,"natural landscapes, long-range continuity, missing public reproduction details"
+Zhang et al. 2025 MapGenerator,text-to-map diffusion,map-like raster image,natural-language map caption,text-map dataset and generation examples,"caption fidelity, spatial relations, dataset-count reproducibility"
+Wang et al. 2025 CartoAgent,MLLM cartographic style agent,stylesheet and styled map,inspiration image + vector/style ecosystem,expert/student human evaluation + MLLM reviewer,"formal constraints beyond style, reviewer calibration"
+Song et al. 2025 VGI mapping agent,LLM GIS workflow agent,thematic map workflow/output,natural-language request + OSM/VGI tools,qualitative case studies,"benchmarking, VGI quality, automated cartographic completeness"
+Li & Ning et al. 2025,autonomous GIS agenda,GIS workflows and result-aware agents,LLM/tool orchestration + visual review,agenda + proof-of-concept systems,result-aware validation and explicit map-design rubrics
+Pannoon & Netek 2025,LLM-generated choropleth code,static and interactive choropleth maps,prompted ChatGPT-4 code generation,case-study outputs,"execution logs, data linting, repair, artifact completeness"
+Yang et al. 2025 MapColorAI,LLM map-design subtask,choropleth color scheme,theme/data semantics + color theory,user study,"accessibility, cultural context, multimodal style grounding"
+Shomer & Xu 2025 MAPLE,LLM map-label placement,label coordinates,guideline RAG + map context,RMSE against benchmark labels,"rendered-layout reasoning, occlusion, scale/context generalization"
+Kang & Wang 2026,GenAI cartography perspective,research agenda,cartographic workflow analysis,conceptual synthesis,operational benchmarks and ethical governance

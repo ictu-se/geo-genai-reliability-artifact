@@ -1,0 +1,52 @@
+{
+  "MapTrain": {
+    "pairs": 750,
+    "missing_images": 0,
+    "unique_images": 750,
+    "avg_word_count": 50.67,
+    "min_word_count": 30,
+    "max_word_count": 88,
+    "feature_mentions": {
+      "road": 550,
+      "green_area": 616,
+      "building_poi": 72,
+      "direction": 415,
+      "intersection": 90,
+      "label": 390,
+      "water": 363
+    },
+    "quality_flags": {
+      "generic_no_feature_claim": 79,
+      "no_direction_or_relation": 315,
+      "no_named_feature": 29
+    },
+    "image_dimensions": {
+      "1024x1024": 750
+    }
+  },
+  "MGEval": {
+    "pairs": 100,
+    "missing_images": 0,
+    "unique_images": 100,
+    "avg_word_count": 54.11,
+    "min_word_count": 38,
+    "max_word_count": 76,
+    "feature_mentions": {
+      "road": 84,
+      "water": 60,
+      "green_area": 89,
+      "direction": 58,
+      "label": 62,
+      "intersection": 15,
+      "building_poi": 9
+    },
+    "quality_flags": {
+      "no_direction_or_relation": 38,
+      "generic_no_feature_claim": 13,
+      "no_named_feature": 2
+    },
+    "image_dimensions": {
+      "1024x1024": 100
+    }
+  }
+}

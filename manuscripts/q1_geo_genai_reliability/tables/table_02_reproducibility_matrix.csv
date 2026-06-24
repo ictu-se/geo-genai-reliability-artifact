@@ -1,0 +1,6 @@
+Dataset,Data,Code,Reproducible,Main blocker
+SCGM / CSCMG,yes,True,partial,GPU/training environment and exact evaluation protocol need setup; cascade-reference coverage is not full one-to-one.
+MapGenerator MGTrain/MGEval,yes,True,partial,Full paper PDF not local; released train image count differs from paper-note claim.
+ChatGPT choropleth materials,yes,yes,mostly,Original ChatGPT version/prompt environment is not frozen; outputs are static artifacts.
+Generative AI mapmaking code,no_original_training_data,yes,no,Original controlled vector/raster training data are not in workspace.
+GeoGuard local LA County benchmark,yes,yes,yes_for_local_scripts,Local benchmark rather than external paper artifact.

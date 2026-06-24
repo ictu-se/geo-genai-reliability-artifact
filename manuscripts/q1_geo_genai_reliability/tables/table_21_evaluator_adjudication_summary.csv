@@ -1,0 +1,3 @@
+Task,Items,Exact agreement,Coarse agreement,Urgent human adjudication,High priority,Stable/low priority,Mean score gap
+MapGenerator caption fidelity,20,3/20,3/20,17,0,3,0.093
+Choropleth cartographic quality,18,13/18,14/18,4,2,10,0.399

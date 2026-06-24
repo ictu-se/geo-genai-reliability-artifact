@@ -1,0 +1,37 @@
+# SCGM Official Feasibility Probe
+
+This probe checks local preconditions for an official SCGM reproduction without importing heavy model modules or running inference.
+
+## Summary
+
+- Probe checks: 15
+- Blocking gaps: 5
+- Warnings/local-override requirements: 0
+- Claim boundary: official SCGM reproduction is not locally runnable yet; current manuscript SCGM evidence remains diagnostic.
+
+## Probe Ledger
+
+| Check | Layer | Status | Evidence | Next action |
+|---|---|---|---|---|
+| runtime_imports | runtime | blocking_gap | present=numpy,tqdm; missing=omegaconf,pytorch_lightning,torch,torchmetrics | Install the drafted SCGM runtime environment before any official inference claim. |
+| entrypoints_present | code | pass | data/repos/SCGM/inference_refmap_batch_level.py=True; data/repos/SCGM/train.py=True; data/repos/SCGM/validate.py=True | Use these entry points only after checkpoint and config-path blockers are resolved. |
+| complete_reference_subset | data | pass | rows=200; all_ref2_ref4=True | Use this subset as the controlled validation target for future official/cascade inference. |
+| 2c_oz_top_config | config | pass | top_config=data/repos/SCGM/configs/test_refmap_level_2c_oz.yaml; official_data_config=data/repos/SCGM/configs/datasetcfg/reference_map_test_level_2c_oz.yaml; effective_data_config=manuscripts/q1_geo_genai_reliability/submission/scgm_official_reproduction_contract/local_overrides/reference_map_test_level_2c_oz_local.yaml | Freeze these configs or write a tracked local override before official inference. |
+| 2c_oz_checkpoint | checkpoint | blocking_gap | checkpoint_reference=data/checkpoints/process_weight/g1-l1-2c+oz-1102-t165500-c30.771.ckpt; local_exists=False | Obtain the referenced official checkpoint or document a training path before claiming reproduction. |
+| 2c_oz_dataroot | data | pass | official_dataroot_exists=True; local_val_root_exists=True; official=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/val; local=data/raw/SCGM/extracted/TMGN_1814/val | Use the tracked local data-config override from the official dataroot to the local CSCMG bridge. |
+| 2c_oz_datalist | data | pass | datalist=tilelist_18_16_3L.csv; official_exists=True; local_exists=False; available_local_tilelists=tilelist_18_15.csv,tilelist_18_15_400AVG.csv,tilelist_18_16.csv,tilelist_18_16_300AVG.csv | Use the tracked local datalist override; regenerate it from the complete-reference subset if the subset changes. |
+| 2c_oz_cascade_path | data | pass | cascade_path=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/cascade_seed_samples; local_exists=True | Populate cascade-path samples or configure inference to write/read cascade outputs deterministically. |
+| 2c_oz_planned_outputs | outputs | blocking_gap | samples_dir=False; targets_dir=False; output=experiments/03_scgm_subset_reproduction/outputs/scgm_official_2c_oz_val | Run official inference only after runtime, checkpoint, datalist, and cascade-path blockers are closed. |
+| 4c_oz_top_config | config | pass | top_config=data/repos/SCGM/configs/test_refmap_level_4c_oz.yaml; official_data_config=data/repos/SCGM/configs/datasetcfg/reference_map_test_level_4c_oz.yaml; effective_data_config=manuscripts/q1_geo_genai_reliability/submission/scgm_official_reproduction_contract/local_overrides/reference_map_test_level_4c_oz_local.yaml | Freeze these configs or write a tracked local override before official inference. |
+| 4c_oz_checkpoint | checkpoint | blocking_gap | checkpoint_reference=data/checkpoints/process_weight/g1-l1-4c+oz-0922-t169500-c30.700.ckpt; local_exists=False | Obtain the referenced official checkpoint or document a training path before claiming reproduction. |
+| 4c_oz_dataroot | data | pass | official_dataroot_exists=True; local_val_root_exists=True; official=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/val; local=data/raw/SCGM/extracted/TMGN_1814/val | Use the tracked local data-config override from the official dataroot to the local CSCMG bridge. |
+| 4c_oz_datalist | data | pass | datalist=tilelist_18_16_3L.csv; official_exists=True; local_exists=False; available_local_tilelists=tilelist_18_15.csv,tilelist_18_15_400AVG.csv,tilelist_18_16.csv,tilelist_18_16_300AVG.csv | Use the tracked local datalist override; regenerate it from the complete-reference subset if the subset changes. |
+| 4c_oz_cascade_path | data | pass | cascade_path=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/cascade_seed_samples; local_exists=True | Populate cascade-path samples or configure inference to write/read cascade outputs deterministically. |
+| 4c_oz_planned_outputs | outputs | blocking_gap | samples_dir=False; targets_dir=False; output=experiments/03_scgm_subset_reproduction/outputs/scgm_official_4c_oz_val | Run official inference only after runtime, checkpoint, datalist, and cascade-path blockers are closed. |
+
+## Interpretation
+
+- The official repository and complete-reference validation subset are available locally.
+- The current machine lacks the required deep-learning runtime packages for the official entry point.
+- The official checkpoint references are not present locally.
+- Tracked local overrides now resolve dataroot, datalist, and cascade-path preparation; runtime, checkpoints, and generated official outputs remain open.

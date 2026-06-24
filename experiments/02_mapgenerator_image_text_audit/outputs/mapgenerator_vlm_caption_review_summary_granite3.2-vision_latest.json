@@ -1,0 +1,27 @@
+{
+  "model": "granite3.2-vision:latest",
+  "reviewed_pairs": 20,
+  "by_split": {
+    "MGEval": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 1.0,
+      "mean_proxy_fidelity_score": 0.741,
+      "verdict_counts": {
+        "supported": 10
+      },
+      "unsupported_claim_rows": 0,
+      "omission_rows": 0
+    },
+    "MapTrain": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 0.945,
+      "mean_proxy_fidelity_score": 0.667,
+      "verdict_counts": {
+        "supported": 9,
+        "partly_supported": 1
+      },
+      "unsupported_claim_rows": 0,
+      "omission_rows": 0
+    }
+  }
+}

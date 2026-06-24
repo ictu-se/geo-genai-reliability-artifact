@@ -1,0 +1,54 @@
+{
+  "mapgenerator_caption_panel": {
+    "task": "Judge whether the caption is supported by the visible map image.",
+    "feature_labels": [
+      "yes",
+      "no",
+      "unclear"
+    ],
+    "caption_support_labels": [
+      "supported",
+      "partly_supported",
+      "unsupported",
+      "unclear"
+    ],
+    "caption_support_definitions": {
+      "supported": "All central caption claims are visible or directly inferable from the map.",
+      "partly_supported": "Some central claims are supported, but at least one important claim is missing, ambiguous, or too strong.",
+      "unsupported": "The caption contradicts the image or most central claims are not visible.",
+      "unclear": "The image/caption cannot be judged confidently."
+    },
+    "minimum_independent_annotators": 2
+  },
+  "choropleth_cartographic_panel": {
+    "task": "Judge whether the rendered artifact is a usable choropleth-style cartographic artifact.",
+    "component_labels": [
+      "yes",
+      "no",
+      "unclear"
+    ],
+    "quality_score_range": [
+      0.0,
+      1.0
+    ],
+    "verdict_labels": [
+      "usable",
+      "usable_with_minor_issues",
+      "weak",
+      "failed",
+      "unclear"
+    ],
+    "verdict_definitions": {
+      "usable": "Map content, thematic encoding, title/context, legend/colorbar, and layout are all acceptable.",
+      "usable_with_minor_issues": "Core map content is usable, with minor missing or imperfect cartographic elements.",
+      "weak": "The artifact is visible but has substantial cartographic omissions or layout problems.",
+      "failed": "The artifact is blank, not a map, not inspectable, or lacks core choropleth content.",
+      "unclear": "The artifact cannot be judged confidently."
+    },
+    "minimum_independent_annotators": 2
+  },
+  "adjudication": {
+    "primary_rule": "Use two independent human annotations where possible; adjudicate disagreements with a designated expert or third annotator.",
+    "reporting_rule": "Report human agreement separately from VLM agreement and do not relabel VLM outputs as ground truth."
+  }
+}

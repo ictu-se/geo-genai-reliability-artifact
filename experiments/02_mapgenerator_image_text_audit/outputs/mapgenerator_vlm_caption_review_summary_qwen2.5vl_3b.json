@@ -1,0 +1,27 @@
+{
+  "model": "qwen2.5vl:3b",
+  "reviewed_pairs": 20,
+  "by_split": {
+    "MGEval": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 0.88,
+      "mean_proxy_fidelity_score": 0.741,
+      "verdict_counts": {
+        "partly_supported": 10
+      },
+      "unsupported_claim_rows": 10,
+      "omission_rows": 4
+    },
+    "MapTrain": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 0.89,
+      "mean_proxy_fidelity_score": 0.667,
+      "verdict_counts": {
+        "partly_supported": 8,
+        "supported": 2
+      },
+      "unsupported_claim_rows": 8,
+      "omission_rows": 5
+    }
+  }
+}

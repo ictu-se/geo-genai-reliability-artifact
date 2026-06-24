@@ -1,0 +1,44 @@
+{
+  "model": "64x64 RS patch nearest-neighbor retrieval, patch=8",
+  "input_feature_dimension": 264,
+  "patch_bank_size": 12416,
+  "patches_per_output": 64,
+  "train_candidates_before_overlap_filter": 200,
+  "train_samples_after_overlap_filter": 194,
+  "train_val_tile_overlap_excluded": 6,
+  "train_val_tile_overlap_excluded_examples": [
+    "14_7965_5111",
+    "14_7969_5110",
+    "14_7970_5124",
+    "14_7973_5126",
+    "14_7974_5109",
+    "14_7976_5122"
+  ],
+  "unique_source_tiles_used": 193,
+  "train_samples": 194,
+  "validation_outputs": 100,
+  "mae_rgb": {
+    "mean": 16.335779,
+    "median": 15.684595,
+    "p10": 11.090369,
+    "p90": 22.503487
+  },
+  "psnr_rgb": {
+    "mean": 19.992807,
+    "median": 20.029947,
+    "p10": 18.019836,
+    "p90": 22.007727
+  },
+  "global_ssim_luma": {
+    "mean": 0.273621,
+    "median": 0.247993,
+    "p10": 0.16329,
+    "p90": 0.439767
+  },
+  "generated_edge_continuity": {
+    "mean": 11.403972,
+    "median": 11.383463,
+    "p10": 6.737109,
+    "p90": 16.962629
+  }
+}

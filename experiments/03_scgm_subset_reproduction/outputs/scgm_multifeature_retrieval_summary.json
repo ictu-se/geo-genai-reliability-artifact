@@ -1,0 +1,30 @@
+{
+  "train_candidates": 200,
+  "validation_outputs": 100,
+  "exact_tile_candidates_excluded": 6,
+  "same_zoom_retrievals": 100,
+  "mae_rgb": {
+    "mean": 21.684555,
+    "median": 24.289112,
+    "p10": 6.048589,
+    "p90": 32.387108
+  },
+  "psnr_rgb": {
+    "mean": 19.187075,
+    "median": 17.986187,
+    "p10": 16.611565,
+    "p90": 23.65383
+  },
+  "global_ssim_luma": {
+    "mean": 0.290337,
+    "median": 0.252883,
+    "p10": 0.131242,
+    "p90": 0.53899
+  },
+  "generated_edge_continuity": {
+    "mean": 24.089735,
+    "median": 31.539062,
+    "p10": 5.213672,
+    "p90": 35.861069
+  }
+}

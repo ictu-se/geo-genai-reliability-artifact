@@ -1,0 +1,25 @@
+Case id,Source model,Mode,Prompt,Repair model,Attempts,Safe attempts,One-pass score,Final iteration,Final score,Best score,Complete,First complete iteration,Failed checks,Safety issues
+deepseek-coder_6.7b__basic__C004_missing_crs_repair,deepseek-coder_6.7b,basic,C004_missing_crs_repair,qwen2.5-coder:14b,2,2,0.571,2,0.857,0.857,False,,execution_success,
+deepseek-coder_6.7b__basic__C004_missing_crs_repair,deepseek-coder_6.7b,basic,C004_missing_crs_repair,qwen2.5-coder:7b,2,2,0.571,2,0.571,0.571,False,,"execution_success, static_png, diagnostic_json",
+deepseek-coder_6.7b__basic__C004_missing_crs_repair,deepseek-coder_6.7b,basic,C004_missing_crs_repair,deepseek-coder:6.7b,1,0,0.571,1,0.000,0.000,False,,unsafe:syntax_error:unexpected EOF while parsing,syntax_error:unexpected EOF while parsing
+deepseek-coder_6.7b__basic__C007_wrong_column_guard,deepseek-coder_6.7b,basic,C007_wrong_column_guard,qwen2.5-coder:14b,2,2,0.600,2,1.000,1.000,True,2,,
+deepseek-coder_6.7b__basic__C007_wrong_column_guard,deepseek-coder_6.7b,basic,C007_wrong_column_guard,qwen2.5-coder:7b,2,2,0.600,2,0.600,0.600,False,,"execution_success, diagnostic_json",
+deepseek-coder_6.7b__basic__C007_wrong_column_guard,deepseek-coder_6.7b,basic,C007_wrong_column_guard,deepseek-coder:6.7b,1,0,0.600,1,0.000,0.000,False,,unsafe:syntax_error:invalid syntax,syntax_error:invalid syntax
+deepseek-coder_6.7b__rules__C003_static_full_layout,deepseek-coder_6.7b,rules,C003_static_full_layout,qwen2.5-coder:14b,2,2,0.833,2,0.833,0.833,False,,static_png,
+deepseek-coder_6.7b__rules__C003_static_full_layout,deepseek-coder_6.7b,rules,C003_static_full_layout,qwen2.5-coder:7b,2,2,0.833,2,0.833,0.833,False,,static_png,
+deepseek-coder_6.7b__rules__C003_static_full_layout,deepseek-coder_6.7b,rules,C003_static_full_layout,deepseek-coder:6.7b,2,2,0.833,2,0.833,0.833,False,,static_png,
+deepseek-coder_6.7b__rules__C004_missing_crs_repair,deepseek-coder_6.7b,rules,C004_missing_crs_repair,qwen2.5-coder:14b,2,2,0.571,2,0.571,0.571,False,,"execution_success, static_png, diagnostic_json",
+deepseek-coder_6.7b__rules__C004_missing_crs_repair,deepseek-coder_6.7b,rules,C004_missing_crs_repair,qwen2.5-coder:7b,1,1,0.571,1,1.000,1.000,True,1,,
+deepseek-coder_6.7b__rules__C004_missing_crs_repair,deepseek-coder_6.7b,rules,C004_missing_crs_repair,deepseek-coder:6.7b,1,0,0.571,1,0.000,0.000,False,,unsafe:syntax_error:invalid syntax,syntax_error:invalid syntax
+deepseek-coder_6.7b__rules__C005_geometry_repair,deepseek-coder_6.7b,rules,C005_geometry_repair,qwen2.5-coder:14b,1,1,0.714,1,1.000,1.000,True,1,,
+deepseek-coder_6.7b__rules__C005_geometry_repair,deepseek-coder_6.7b,rules,C005_geometry_repair,qwen2.5-coder:7b,2,2,0.714,2,0.857,0.857,False,,execution_success,
+deepseek-coder_6.7b__rules__C005_geometry_repair,deepseek-coder_6.7b,rules,C005_geometry_repair,deepseek-coder:6.7b,1,0,0.714,1,0.000,0.000,False,,unsafe:syntax_error:invalid syntax,syntax_error:invalid syntax
+qwen2.5-coder_7b__basic__C004_missing_crs_repair,qwen2.5-coder_7b,basic,C004_missing_crs_repair,qwen2.5-coder:14b,2,2,0.571,2,0.571,0.571,False,,"execution_success, static_png, diagnostic_json",
+qwen2.5-coder_7b__basic__C004_missing_crs_repair,qwen2.5-coder_7b,basic,C004_missing_crs_repair,qwen2.5-coder:7b,2,2,0.571,2,1.000,1.000,True,2,,
+qwen2.5-coder_7b__basic__C004_missing_crs_repair,qwen2.5-coder_7b,basic,C004_missing_crs_repair,deepseek-coder:6.7b,1,0,0.571,1,0.000,0.000,False,,unsafe:syntax_error:invalid syntax,syntax_error:invalid syntax
+qwen2.5-coder_7b__basic__C007_wrong_column_guard,qwen2.5-coder_7b,basic,C007_wrong_column_guard,qwen2.5-coder:14b,1,1,0.600,1,1.000,1.000,True,1,,
+qwen2.5-coder_7b__basic__C007_wrong_column_guard,qwen2.5-coder_7b,basic,C007_wrong_column_guard,qwen2.5-coder:7b,1,1,0.600,1,1.000,1.000,True,1,,
+qwen2.5-coder_7b__basic__C007_wrong_column_guard,qwen2.5-coder_7b,basic,C007_wrong_column_guard,deepseek-coder:6.7b,1,0,0.600,1,0.000,0.000,False,,unsafe:syntax_error:invalid syntax,syntax_error:invalid syntax
+qwen2.5-coder_7b__rules__C007_wrong_column_guard,qwen2.5-coder_7b,rules,C007_wrong_column_guard,qwen2.5-coder:14b,2,2,0.600,2,0.800,0.800,False,,execution_success,
+qwen2.5-coder_7b__rules__C007_wrong_column_guard,qwen2.5-coder_7b,rules,C007_wrong_column_guard,qwen2.5-coder:7b,2,2,0.600,2,0.600,0.600,False,,"execution_success, diagnostic_json",
+qwen2.5-coder_7b__rules__C007_wrong_column_guard,qwen2.5-coder_7b,rules,C007_wrong_column_guard,deepseek-coder:6.7b,2,2,0.600,2,0.800,0.800,False,,execution_success,

@@ -1,0 +1,5 @@
+file,task,mode,rows,expected_rows,missing_schema,duplicate_panel_ids,unexpected_panel_ids,missing_panel_ids,missing_artifacts,invalid_values,incomplete_rows,score_errors,status
+manuscripts/q1_geo_genai_reliability/submission/human_validation_panels/annotator_packets/mapgenerator_caption_fidelity_A_completed.csv,mapgenerator_caption_fidelity,blank_or_partial,20,20,,,,,0,0,0,0,pass
+manuscripts/q1_geo_genai_reliability/submission/human_validation_panels/annotator_packets/mapgenerator_caption_fidelity_B_completed.csv,mapgenerator_caption_fidelity,blank_or_partial,20,20,,,,,0,0,0,0,pass
+manuscripts/q1_geo_genai_reliability/submission/human_validation_panels/annotator_packets/choropleth_cartographic_quality_A_completed.csv,choropleth_cartographic_quality,blank_or_partial,18,18,,,,,0,0,0,0,pass
+manuscripts/q1_geo_genai_reliability/submission/human_validation_panels/annotator_packets/choropleth_cartographic_quality_B_completed.csv,choropleth_cartographic_quality,blank_or_partial,18,18,,,,,0,0,0,0,pass

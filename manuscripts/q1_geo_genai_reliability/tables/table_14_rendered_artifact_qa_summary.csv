@@ -1,0 +1,7 @@
+Source,Checked artifacts,Existing,Nonblank images,Valid HTML,Valid JSON
+deepseek-coder_6.7b,88,1,0,0,1
+qwen2.5-coder_7b,96,0,0,0,0
+reference,4,4,2,1,1
+repair_qwen2.5-coder_32b,184,11,5,0,6
+repair_qwen2.5-coder_7b,36,0,0,0,0
+validator_repair_reference,48,48,24,12,12

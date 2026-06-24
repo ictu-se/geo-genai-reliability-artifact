@@ -1,0 +1,9 @@
+Baseline,Validation outputs,Leakage guard,MAE RGB mean,PSNR mean,SSIM luma mean,Edge continuity mean
+color-stat retrieval,100,6,16.767246,19.931509,0.245472,20.089735
+multi-feature retrieval,100,6,21.684555,19.187075,0.290337,24.089735
+learned forest,100,6,17.362703,21.608828,0.409008,4.611871
+neural MLP,100,6,30.725883,17.955496,0.303307,12.132487
+local-context ridge,100,6,17.542248,21.193199,0.361186,8.075412
+convolutional filter-bank ridge,100,6,19.14752,20.752409,0.347422,6.235243
+patch-embedding retrieval,100,6,16.335779,19.992807,0.273621,11.403972
+trained tiny CNN,100,6,26.100397,18.466171,0.366129,9.221896

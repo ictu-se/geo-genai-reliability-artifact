@@ -1,0 +1,18 @@
+Section,Current words,Target words,Cut words,Action
+From Map-Like Images to Trustworthy Cartographic Artifacts: A Cross-Paradigm Reliability Audit of Geo-Generative AI,15,15,0,keep
+Abstract,238,240,0,keep
+1. Introduction,878,500,378,tighten prose
+2. Background and Related Work,1110,1000,110,compress literature examples into paradigm paragraphs and Table 17 supplement
+3. Conceptual Framework: Generated Maps as Artifact Chains,806,700,106,shorten definitions after first use; rely on Figure 1
+4. Data and Artifacts,589,500,89,tighten prose
+5. Methods,2384,1550,834,move procedural detail and prompt mechanics to supplement; keep contracts and scoring logic
+6. Results,3549,2400,1149,retain headline metrics and cross-paradigm contrasts; move per-model/per-case narration to supplement
+7. Discussion,1322,1200,122,merge repeated implications and keep reliability-matrix interpretation
+8. Limitations,596,450,146,tighten prose
+9. Additional Strengthening Experiments,122,80,42,tighten prose
+10. Conclusion,99,100,0,keep
+Acknowledgments,4,30,0,keep
+Declaration of Interest Statement,15,40,0,keep
+Data Availability Statement,43,90,0,keep
+Software Availability Statement,13,80,0,keep
+References,30,470,0,keep

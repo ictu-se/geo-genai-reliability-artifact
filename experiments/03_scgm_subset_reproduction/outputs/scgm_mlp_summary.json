@@ -1,0 +1,46 @@
+{
+  "model": "StandardScaler + MLPRegressor(hidden_layer_sizes=(64,), solver='lbfgs', alpha=0.1)",
+  "input_feature_dimension": 1039,
+  "output_dimension": 768,
+  "low_resolution_output": "16x16x3",
+  "train_candidates_before_overlap_filter": 200,
+  "train_samples_after_overlap_filter": 194,
+  "train_val_tile_overlap_excluded": 6,
+  "train_val_tile_overlap_excluded_examples": [
+    "14_7965_5111",
+    "14_7969_5110",
+    "14_7970_5124",
+    "14_7973_5126",
+    "14_7974_5109",
+    "14_7976_5122"
+  ],
+  "training_iterations": 350,
+  "training_loss": 0.066365,
+  "best_validation_score": null,
+  "train_samples": 194,
+  "validation_outputs": 100,
+  "mae_rgb": {
+    "mean": 30.725883,
+    "median": 23.033997,
+    "p10": 18.114159,
+    "p90": 58.801395
+  },
+  "psnr_rgb": {
+    "mean": 17.955496,
+    "median": 18.74062,
+    "p10": 12.043325,
+    "p90": 21.487251
+  },
+  "global_ssim_luma": {
+    "mean": 0.303307,
+    "median": 0.25767,
+    "p10": 0.158878,
+    "p90": 0.540507
+  },
+  "generated_edge_continuity": {
+    "mean": 12.132487,
+    "median": 0.011719,
+    "p10": 0.0,
+    "p90": 29.630207
+  }
+}

@@ -1,0 +1,15 @@
+# SCGM Official Local Overrides
+
+These artifacts close local path and datalist preparation gaps for a future official SCGM inference run. They do not supply model checkpoints, runtime packages, or generated official outputs.
+
+| Artifact | Status | Path | Evidence | Claim boundary |
+|---|---|---|---|---|
+| bridge_dataroot | ready | `experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/val` | map_256=ready; ref_scale_2_256=ready; ref_scale_4_256=ready; rs_256=ready | Local bridge only; does not create official model outputs. |
+| bridge_datalist | ready | `experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/val/tilelist_18_16_3L.csv` | rows=200; required_column=tilename; loader_minmax_from_filename=18_16 | Derived from complete-reference validation subset for controlled future inference. |
+| bridge_cascade_path | ready | `experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/cascade_seed_samples` | directory exists for deterministic future cascade outputs | Empty seed directory; future official inference must populate samples. |
+| 2c_local_data_config | ready | `manuscripts/q1_geo_genai_reliability/submission/scgm_official_reproduction_contract/local_overrides/reference_map_test_level_2c_oz_local.yaml` | dataroot=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/val; datalist=tilelist_18_16_3L.csv; cascade_path=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/cascade_seed_samples | Config override only; checkpoint/runtime still required. |
+| 4c_local_data_config | ready | `manuscripts/q1_geo_genai_reliability/submission/scgm_official_reproduction_contract/local_overrides/reference_map_test_level_4c_oz_local.yaml` | dataroot=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/val; datalist=tilelist_18_16_3L.csv; cascade_path=../../../experiments/03_scgm_subset_reproduction/outputs/scgm_official_local_bridge/cascade_seed_samples | Config override only; checkpoint/runtime still required. |
+
+## Usage Note
+
+Run official SCGM inference from `data/repos/SCGM` with the local data-config override after installing the runtime and obtaining the referenced checkpoints. The bridge dataroot uses relative symlinks to avoid copying or mutating the raw CSCMG extract.

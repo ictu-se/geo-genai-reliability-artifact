@@ -1,0 +1,5 @@
+Scope,Paired artifacts,Exact verdict agreement,Usable/below agreement,Both usable,Mean score Granite,Mean score Qwen,Score Pearson r,Qwen lower score,Component agreement
+overall,18,13/18,14/18,12,0.616,0.294,-0.058,15/18,80/108
+reference,3,2/3,2/3,2,0.567,0.400,-0.327,2/3,13/18
+repair_qwen2.5-coder_32b,5,1/5,2/5,0,0.478,0.220,-0.572,3/5,17/30
+validator_repair_reference,10,10/10,10/10,10,0.700,0.300,-1.000,10/10,50/60

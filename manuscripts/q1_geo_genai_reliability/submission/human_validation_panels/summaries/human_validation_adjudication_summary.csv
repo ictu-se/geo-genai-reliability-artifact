@@ -1,0 +1,3 @@
+task,priority_items,urgent_items,agreement,adjudication_required,single_label_only,missing_labels,final_ready,urgent_missing_labels,urgent_final_ready,status
+mapgenerator_caption_fidelity,20,17,0,0,0,20,0,17,0,awaiting_labels_or_adjudication
+choropleth_cartographic_quality,18,5,0,0,0,18,0,5,0,awaiting_labels_or_adjudication

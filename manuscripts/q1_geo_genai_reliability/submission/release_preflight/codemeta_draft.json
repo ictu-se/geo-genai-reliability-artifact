@@ -1,0 +1,39 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "geo-genai-reliability",
+  "description": "Scripts and derived evidence for a cross-paradigm Geo-GenAI map-generation reliability audit.",
+  "codeRepository": "TODO: public repository URL",
+  "issueTracker": "TODO: repository issue tracker URL or remove",
+  "license": "TODO: choose license",
+  "programmingLanguage": [
+    "Python"
+  ],
+  "runtimePlatform": "Python 3.10+",
+  "softwareRequirements": [
+    "geopandas",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pillow",
+    "pyogrio",
+    "pyproj",
+    "rasterio",
+    "scikit-image",
+    "scikit-learn",
+    "shapely",
+    "folium",
+    "playwright"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "TODO",
+      "familyName": "TODO",
+      "affiliation": "TODO"
+    }
+  ],
+  "dateCreated": "2026-06-24",
+  "version": "TODO: release tag",
+  "identifier": "TODO: DOI"
+}

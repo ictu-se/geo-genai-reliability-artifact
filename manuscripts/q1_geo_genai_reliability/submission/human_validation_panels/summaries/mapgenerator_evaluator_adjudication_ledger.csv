@@ -1,0 +1,21 @@
+panel_id,split,image,proxy_severity,proxy_score,granite_verdict,qwen_verdict,exact_verdict_agreement,coarse_supported_agreement,granite_score,qwen_score,score_gap_abs,feature_agreement,human_priority,adjudication_note
+MG-001,MGEval,16_1008.jpg,medium,0.870,supported,partly_supported,False,False,1.000,0.900,0.100,3/3,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-002,MGEval,16_1253.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-003,MGEval,16_1284.jpg,medium,0.870,supported,partly_supported,False,False,1.000,0.900,0.100,3/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-004,MGEval,16_1783.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.800,0.200,2/4,urgent_human_adjudication,
+MG-005,MGEval,16_221.jpg,medium,0.740,supported,partly_supported,False,False,1.000,1.000,0.000,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-006,MGEval,16_2568.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.800,0.200,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-007,MGEval,16_2764.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.900,0.100,3/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-008,MGEval,16_2977.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-009,MGEval,16_3150.jpg,medium,0.740,supported,partly_supported,False,False,1.000,0.800,0.200,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-010,MGEval,16_3260.jpg,medium,0.740,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-011,MapTrain,16_202.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-012,MapTrain,16_23.jpg,medium,0.690,supported,partly_supported,False,False,0.850,0.900,0.050,3/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-013,MapTrain,16_348.jpg,medium,0.690,partly_supported,partly_supported,True,True,0.800,0.800,0.000,4/4,low_priority_stable,
+MG-014,MapTrain,16_373.jpg,high,0.510,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-015,MapTrain,16_54.jpg,medium,0.690,supported,supported,True,True,1.000,1.000,0.000,4/4,low_priority_stable,
+MG-016,MapTrain,16_587.jpg,medium,0.690,supported,supported,True,True,1.000,0.900,0.100,4/4,low_priority_stable,
+MG-017,MapTrain,16_601.jpg,medium,0.640,supported,partly_supported,False,False,0.800,0.800,0.000,3/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-018,MapTrain,16_630.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-019,MapTrain,16_683.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold
+MG-020,MapTrain,16_719.jpg,medium,0.690,supported,partly_supported,False,False,1.000,0.900,0.100,4/4,urgent_human_adjudication,VLMs agree on visible features but differ on semantic support threshold

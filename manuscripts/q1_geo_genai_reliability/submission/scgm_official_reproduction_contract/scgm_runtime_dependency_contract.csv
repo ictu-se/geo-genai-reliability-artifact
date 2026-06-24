@@ -1,0 +1,8 @@
+item,status,evidence,notes
+official_repo_commit,pinned,https://github.com/Magician-MO/SCGM.git@a3ea795af8f095af46bb44a97ff652bb264d3639,Use this exact commit for any official/cascade-conditioned claim.
+python_runtime,contract_drafted,"python>=3.10,<3.12",Chosen to match modern PyTorch/Lightning while avoiding untested Python 3.12 API drift.
+core_deep_learning_stack,contract_drafted,"pytorch, torchvision, pytorch-lightning, torchmetrics, omegaconf, einops, numpy, pillow, tqdm",Derived from official entry-point imports and model utilities.
+diffusion_dependency,contract_drafted,Stable Diffusion SD-2.1-base remains an upstream prerequisite in README.,Model weights are not redistributed by this manuscript package.
+device_policy,contract_drafted,official configs assume GPU; inference script has cpu/cuda/mps switch but heavy diffusion inference should be treated as GPU-preferred.,"CPU smoke tests may validate imports/configs, not final official metrics."
+local_data_policy,ready,data/raw/SCGM/extracted/TMGN_1814,Local CSCMG extract has base RS/map pairs and deterministic complete-reference subset manifests.
+checkpoint_policy,external_blocker,official resume paths point to process/init weights that are not present locally.,Do not claim official reproduction until obtained checkpoints or a documented training path exists.

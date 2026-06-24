@@ -1,0 +1,9 @@
+Baseline,Neighbor pairs,Missing pairs,Generated seam mean,Target seam mean,Stress ratio mean,Stress ratio p90,Interpretation
+color-stat retrieval,12,12,20.089735,4.467556,10.695079,14.855922,seam score; lower can also indicate over-smoothing
+multi-feature retrieval,12,12,24.089735,4.467556,11.765274,17.107949,seam score; lower can also indicate over-smoothing
+learned forest,12,12,4.611871,4.467556,1.75489,2.921877,seam score; lower can also indicate over-smoothing
+neural MLP,12,12,12.132487,4.467556,15.686329,10.629434,seam score; lower can also indicate over-smoothing
+local-context ridge,12,12,8.075412,4.467556,2.876555,3.653725,seam score; lower can also indicate over-smoothing
+convolutional filter-bank ridge,12,12,6.235243,4.467556,2.33258,2.808676,seam score; lower can also indicate over-smoothing
+patch-embedding retrieval,12,12,11.403971,4.467556,5.200429,8.198448,seam score; lower can also indicate over-smoothing
+trained tiny CNN,12,12,9.221897,4.467556,3.392778,6.487469,seam score; lower can also indicate over-smoothing

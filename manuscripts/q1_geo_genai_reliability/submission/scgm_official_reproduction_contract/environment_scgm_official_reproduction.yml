@@ -1,0 +1,24 @@
+name: scgm-official-reproduction
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python>=3.10,<3.12
+  - pytorch
+  - torchvision
+  - pytorch-cuda
+  - pip
+  - pip:
+      - pytorch-lightning
+      - torchmetrics
+      - omegaconf
+      - einops
+      - numpy
+      - pillow
+      - tqdm
+      - scipy
+      - scikit-image
+      - opencv-python
+      - lpips
+      - clean-fid

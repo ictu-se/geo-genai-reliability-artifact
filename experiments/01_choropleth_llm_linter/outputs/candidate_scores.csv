@@ -1,0 +1,7 @@
+candidate,check_crs_repair,check_diagnostic_report,check_execution_success,check_interactive,check_max_year_report,check_static,check_time_series,failed_checks,passed,prompt_id,required,run_id,score
+p01_static_basic_naive.py,False,False,True,False,False,True,False,,2,P01_static_basic,2,P01_static_basic_p01_static_basic_naive_20260619_210824,1.0
+p02_static_with_crs_repair.py,True,False,True,False,False,True,False,,3,P02_static_with_crs_repair,3,P02_static_with_crs_repair_p02_static_with_crs_repair_20260619_210825,1.0
+p03_interactive_basic.py,True,False,True,True,False,False,False,,2,P03_interactive_basic,2,P03_interactive_basic_p03_interactive_basic_20260619_210826,1.0
+p04_csv_time_series.py,False,False,True,False,True,False,True,,3,P04_csv_time_series,3,P04_csv_time_series_p04_csv_time_series_20260619_210829,1.0
+reference_solution.py,True,True,True,True,False,True,False,,5,P05_robust_cartographic_output,5,P05_robust_cartographic_output_reference_solution_20260619_205939,1.0
+p05_wrong_column_failure.py,False,False,False,False,False,False,False,"execution_success, static, interactive, crs_repair, diagnostic_report",0,P05_wrong_column,5,P05_wrong_column_p05_wrong_column_failure_20260619_210830,0.0

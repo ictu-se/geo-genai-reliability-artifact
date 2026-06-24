@@ -1,0 +1,20 @@
+# Zenodo Release Preflight
+
+- staged package: `manuscripts/q1_geo_genai_reliability/submission/zenodo_release_staging/geo_genai_reliability_zenodo`
+- zip archive: `manuscripts/q1_geo_genai_reliability/submission/zenodo_release_staging/geo_genai_reliability_zenodo.zip`
+- failures: 0
+- warnings: 1
+
+| Check | Status | Evidence | Action |
+|---|---|---|---|
+| staged directory exists | pass | files=371; path=manuscripts/q1_geo_genai_reliability/submission/zenodo_release_staging/geo_genai_reliability_zenodo | Run stage_zenodo_release.py before preflight. |
+| staged manifest exists | pass | bytes=58766 | Regenerate staging so every file has a checksum row. |
+| raw data and bulky run folders excluded | pass | no forbidden release paths | Remove raw data, generated maps, generated code folders, run folders, and caches from Zenodo staging. |
+| archives and model weights excluded | pass | no archives/checkpoints in staged package | Do not upload nested archives or model weights unless explicitly cleared. |
+| no local path or removed-template residue | pass | no forbidden text residue | Sanitize local paths and removed-template residue before upload. |
+| final Zenodo metadata has no TODO placeholders | warning | manuscripts/q1_geo_genai_reliability/submission/release_preflight/CITATION.cff; manuscripts/q1_geo_genai_reliability/submission/release_preflight/codemeta_draft.json; manuscripts/q1_geo_genai_reliability/submission/release_preflight/doi_release_checklist.md; manuscripts/q1_geo_genai_reliability/submission/release_preflight/release_preflight.md; manuscripts/q1_geo_genai_reliability/submission/release_preflight/release_preflight_checks.csv; manuscripts/q1_geo_genai_reliability/submission/release_preflight/zenodo_metadata_draft.json | Replace author, license, DOI, repository, and ORCID placeholders before final deposit. |
+| zip archive readable | pass | entries=371; bad=None | Regenerate stage zip if unreadable. |
+
+## Interpretation
+
+A warning on TODO metadata is acceptable for a draft staging package, but it must be resolved before a final Zenodo deposit.

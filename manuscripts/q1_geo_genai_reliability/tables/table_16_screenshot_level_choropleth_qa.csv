@@ -1,0 +1,19 @@
+Source,Artifact kind,Checked,Existing,HTML rendered,Screenshot QA pass,Pass rate existing
+deepseek-coder_6.7b,interactive_html,22,0,0,0,0.000
+deepseek-coder_6.7b,static_png,22,0,,0,0.000
+deepseek-coder_6.7b,time_series_png,22,0,,0,0.000
+qwen2.5-coder_7b,interactive_html,24,0,0,0,0.000
+qwen2.5-coder_7b,static_png,24,0,,0,0.000
+qwen2.5-coder_7b,time_series_png,24,0,,0,0.000
+reference,interactive_html,1,1,1,1,1.000
+reference,static_png,1,1,,1,1.000
+reference,time_series_png,1,1,,1,1.000
+repair_qwen2.5-coder_32b,interactive_html,46,0,0,0,0.000
+repair_qwen2.5-coder_32b,static_png,46,5,,5,1.000
+repair_qwen2.5-coder_32b,time_series_png,46,0,,0,0.000
+repair_qwen2.5-coder_7b,interactive_html,9,0,0,0,0.000
+repair_qwen2.5-coder_7b,static_png,9,0,,0,0.000
+repair_qwen2.5-coder_7b,time_series_png,9,0,,0,0.000
+validator_repair_reference,interactive_html,12,12,12,12,1.000
+validator_repair_reference,static_png,12,12,,12,1.000
+validator_repair_reference,time_series_png,12,12,,12,1.000

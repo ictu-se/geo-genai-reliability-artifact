@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: Please cite this reproducibility package and the associated manuscript.
+title: From Map-Like Images to Trustworthy Cartographic Artifacts: A Cross-Paradigm Reliability Audit of Geo-Generative AI
+type: dataset
+authors:
+  - family-names: TODO
+    given-names: TODO
+    affiliation: TODO
+    orcid: TODO
+doi: TODO
+repository-code: TODO
+date-released: TODO
+keywords:
+  - GeoAI
+  - generative AI
+  - cartography
+  - map generation
+  - reproducibility
+  - remote sensing
+  - choropleth maps
+abstract: >-
+  Reproducibility package containing project-created code, derived evidence tables,
+  prompts, manifests, and QA ledgers for a cross-paradigm Geo-GenAI map-generation
+  reliability audit. Raw third-party datasets are source-linked unless redistribution
+  permissions are confirmed.

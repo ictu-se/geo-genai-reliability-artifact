@@ -1,0 +1,11 @@
+Paper,Paradigm,Scale,Local data,Local code,Status
+Affolter et al. 2025,controlled diffusion mapmaking,296495 training tiles reported in survey notes; 100 test tiles per style,no,partial,not_reproducible_locally
+Sun et al. 2025 SCGM,remote-sensing-to-map diffusion,local train 135572 RS/map pairs; val 1473 RS/map pairs; cascade references incomplete,yes,yes,partially_reproducible
+Zhang et al. 2025 MapGenerator,text-to-map diffusion,paper notes report 1000 train and 100 eval; local release has 750 train and 100 eval,yes,yes,partially_reproducible
+Pannoon and Netek 2025,LLM-generated choropleth code maps,"local repo has 33 PNG maps, 10 HTML maps, 20 notebooks, choropleth data",yes,yes,mostly_reproducible_as_artifact_audit
+Wang et al. 2025 CartoAgent,multimodal map style agent,human evaluation with 17 experts/students reported in survey notes,no,no,not_reproducible_locally
+Song et al. 2025 LLM VGI mapping,LLM GIS/tool agent,qualitative case studies: Beijing/Wuhan and thematic examples,no,no,not_reproducible_locally
+Li and Ning et al. 2025 Autonomous GIS,LLM GIS/cartography agent agenda,research agenda plus prototype cases,no,no,not_reproducible_locally
+Yang et al. 2025 MapColorAI,LLM map design subtask,user study with 60 participants reported in survey notes,no,no,not_reproducible_locally
+Shomer and Xu 2025 MAPLE,label-placement LLM benchmark,"883 train, 126 validation, 267 test landmarks reported in survey notes",no,no,not_reproducible_locally
+Burghardt et al. 2025,pictorial map generation,short abstract/prototype-level evidence,no,no,not_reproducible_locally

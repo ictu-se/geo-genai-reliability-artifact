@@ -1,0 +1,4 @@
+Scope,Paired items,Exact verdict agreement,Supported/below agreement,Both supported,Mean score Granite,Mean score Qwen,Score Pearson r,Qwen lower score,Feature agreement
+overall,20,3/20,3/20,2,0.972,0.885,0.420,15/20,73/79
+MGEval,10,0/10,0/10,0,1.000,0.880,,9/10,35/39
+MapTrain,10,3/10,3/10,2,0.945,0.890,0.754,6/10,38/40

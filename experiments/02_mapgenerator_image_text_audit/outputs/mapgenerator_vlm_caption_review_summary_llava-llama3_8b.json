@@ -1,0 +1,30 @@
+{
+  "model": "llava-llama3:8b",
+  "reviewed_pairs": 20,
+  "by_split": {
+    "MGEval": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 0.3,
+      "mean_proxy_fidelity_score": 0.741,
+      "verdict_counts": {
+        "": 2,
+        "partly_supported": 5,
+        "error": 3
+      },
+      "unsupported_claim_rows": 0,
+      "omission_rows": 0
+    },
+    "MapTrain": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 0.356,
+      "mean_proxy_fidelity_score": 0.667,
+      "verdict_counts": {
+        "": 3,
+        "error": 1,
+        "partly_supported": 6
+      },
+      "unsupported_claim_rows": 0,
+      "omission_rows": 0
+    }
+  }
+}

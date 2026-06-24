@@ -1,0 +1,3 @@
+Task,Items,Exact VLM agreement,Coarse VLM agreement,Urgent human adjudication,High human priority,Medium priority,Low priority/stable,Mean score gap,Interpretation
+MapGenerator caption fidelity,20,3/20,3/20,17,0,0,3,0.093,VLM threshold instability; use as triage only
+Choropleth cartographic quality,18,13/18,14/18,4,2,2,10,0.399,more stable for rendered-map usability than caption semantics

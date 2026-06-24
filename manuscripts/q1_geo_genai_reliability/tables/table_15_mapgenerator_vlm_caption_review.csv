@@ -1,0 +1,13 @@
+Model,Split,Reviewed,Mean VLM score,Mean proxy score,Verdicts,Errors,Unsupported rows,Omission rows
+granite3.2-vision:latest,MGEval,10,1.0,0.741,supported=10,0,0,0
+granite3.2-vision:latest,MapTrain,10,0.945,0.667,supported=9; partly_supported=1,0,0,0
+llama3.2-vision:11b,MGEval,10,0,0.741,error=10,10,0,0
+llama3.2-vision:11b,MapTrain,10,0,0.667,error=10,10,0,0
+llava-llama3:8b,MGEval,10,0.3,0.741,=2; partly_supported=5; error=3,3,0,0
+llava-llama3:8b,MapTrain,10,0.356,0.667,=3; error=1; partly_supported=6,1,0,0
+minicpm-v:latest,MGEval,10,0,0.741,error=10,10,0,0
+minicpm-v:latest,MapTrain,10,0.8,0.667,partly_supported=1; error=9,9,0,1
+qwen2.5vl:3b,MGEval,10,0.88,0.741,partly_supported=10,0,10,4
+qwen2.5vl:3b,MapTrain,10,0.89,0.667,partly_supported=8; supported=2,0,8,5
+qwen3-vl:4b,MGEval,5,0.7,0.69,partly_supported=1; error=4,4,1,0
+qwen3-vl:4b,MapTrain,5,0,0.644,error=5,5,0,0

@@ -1,0 +1,424 @@
+\documentclass[]{interact}
+
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{natbib}
+\bibpunct[, ]{(}{)}{,}{a}{}{,}
+\renewcommand\bibfont{\fontsize{10}{12}\selectfont}
+
+\begin{document}
+
+\articletype{ARTICLE}
+
+\title{From Map-Like Images to Trustworthy Cartographic Artifacts:\\ A Cross-Paradigm Reliability Audit of Geo-Generative AI}
+\author{
+\name{Anonymous author(s)}
+\affil{Affiliation withheld for double-blind review}
+}
+
+\maketitle
+
+\begin{abstract}
+Generative AI is entering cartography through text-to-map image synthesis, remote-sensing-to-map translation, and LLM-generated GIS code. Yet practical map production requires more than plausible map-like images: generated artifacts must remain geographically grounded, spatially coherent, reproducible, editable, and auditable. This paper proposes an artifact-chain reliability framework for GeoAI map generation and stress-tests it across three public artifact families: paired text-map images, remote-sensing-to-map tiles, and LLM/code-generated choropleth maps. The framework evaluates source data, prompts or captions, conditioning inputs, generated objects, rendered outputs, validation traces, and repair histories as linked evidence. Results show that reliability failures differ by paradigm: text-to-map captions are often under-constrained, SCGM-style tile generation exposes metric trade-offs between similarity and cartographic detail, and LLM-generated GIS code can appear plausible while failing to create complete map artifacts. A validator-gated repair sweep completes 25 of 40 previously incomplete choropleth cases, but positive controls and screenshot QA show that repair must be audited after execution rather than assumed from improved code. The study contributes a reproducible, artifact-aware scaffold for evaluating trustworthy GeoAI map-generation workflows.
+\end{abstract}
+\begin{keywords}
+generative AI; cartography; GeoAI; map generation; evaluation; reproducibility; cartographic quality; LLM agents; remote sensing; choropleth maps
+\end{keywords}
+
+\section{Introduction}
+
+Generative AI is changing cartographic production from two directions. Image-generation systems can synthesize map-like rasters from text, vector constraints, or remote-sensing imagery, while LLM-based agents can write GIS code, assemble thematic maps, and revise outputs after execution. This shift sits within a GIScience tradition that treats geographic information as a formal representation of spatial objects, relations, uncertainty, and process (Goodchild, 1992; Janowicz et al., 2020), and within a cartographic tradition where maps are designed arguments about classification, symbolization, scale, projection, and use. Generated maps therefore cannot be evaluated as ordinary pictures alone.
+
+Recent GeoAI work shows both promise and fragility. Latent-diffusion and ControlNet-style models enable spatially conditioned image synthesis (Rombach et al., 2022; Zhang et al., 2023), while map-specific systems adapt these ideas to text-promptable maps, remote-sensing-to-map translation, LLM-generated choropleths, VGI-driven agents, multimodal style editing, and color-design assistants (Zhang et al., 2025; Sun et al., 2025a; Pannoon and Netek, 2025; Song et al., 2025; Wang et al., 2025; Yang et al., 2025). Review and agenda papers converge on a concern that is especially important for GIScience readers: plausible outputs are not enough unless spatial reasoning, reproducibility, transparency, uncertainty, and domain-specific validation can be inspected (Kang and Wang, 2026; Kausika and van Altena, 2025; Sun et al., 2025b).
+
+The evaluation problem is fragmented across artifact types. Image-generation papers often emphasize visual realism or pixel similarity; agent papers often report screenshots or case studies; cartographic subtask papers use specialized rubrics or user studies. These approaches are valuable but incomplete for map production. A raster tile can score well under similarity metrics while breaking road continuity. A caption can be fluent while omitting the spatial relations needed for faithful text-to-map generation. A Python script can exit successfully while joining the wrong field, dropping CRS metadata, producing a blank map, or failing to write the requested artifact. Conversely, failed runs can be valuable evidence because they reveal reproducible failure modes. This is why documentation, model reporting, and computational reproducibility principles matter directly for Geo-GenAI evaluation (Wilkinson et al., 2016; Sandve et al., 2013; Peng, 2011; Gebru et al., 2021; Mitchell et al., 2019).
+
+This paper's novelty is to shift the unit of evaluation from a final generated image or a single model run to the cartographic artifact chain: source data, prompt or caption, conditioning input, generated intermediate artifact, rendered output, validation trace, and repair history. The same reliability requirement appears differently across paradigms. Text-to-map systems require caption grounding and evaluator robustness; remote-sensing-to-map systems require split integrity, scale-aware conditioning, generated-output baselines, and tile-edge continuity; LLM-code systems require executable code, schema and CRS validity, complete artifacts, screenshot-level QA, and validator-gated repair. Treating these as one artifact-chain problem makes failures comparable without forcing all paradigms into a single metric.
+
+The empirical contribution is a reproducible cross-paradigm audit of paired text-map image data, remote-sensing-to-map tiles, and LLM/code-generated choropleth maps. We ask five questions: how reproducible public Geo-GenAI map-generation artifacts are as data-code-model-output chains; whether text-to-map captions are grounded enough for faithful evaluation; how remote-sensing-to-map generation should be evaluated beyond file availability; whether LLM-generated GIS code can create complete and cartographically valid artifacts; and what failure taxonomy can unify these paradigms. The main contributions are a common reliability framework, reproducibility and caption-fidelity audits, leakage-guarded SCGM generated-output baselines, choropleth artifact QA, and a validator-gated repair benchmark.
+
+The novelty is therefore not simply that several datasets are audited together. It lies in the way the audit treats different generated objects as comparable evidence-bearing artifacts. Previous work often evaluates the output closest to the model: an image, a screenshot, a prompt response, or a reported case study. In applied cartography, however, the output closest to the model is rarely the only object that matters. A map artifact also includes its data lineage, spatial assumptions, symbolization choices, generated files, execution traces, and correction history. By evaluating these objects together, the paper offers a bridge between GeoAI model evaluation and cartographic production QA. This bridge is important because many future map-generation systems will be hybrid: they will combine image synthesis, retrieval, vector constraints, code generation, and visual critique. A reliability framework for such systems must be able to compare heterogeneous failure modes without reducing them to one score.
+
+The paper also makes a practical contribution to how negative and partial results are written into GeoAI evaluation. Many generative AI papers understandably emphasize successful examples, because visual outputs are persuasive and easy to communicate. For maps, however, the difference between a convincing example and a trustworthy workflow often lies in the failures: a missing CRS, a broken tile seam, a wrong join key, an omitted legend, or an evaluator that cannot follow its own schema. The manuscript therefore treats failures as structured observations. This stance is intended to make the paper more useful to researchers building future systems: it identifies which checks should be automated, which require expert review, and which cannot be inferred from screenshots.
+
+\section{Background and Related Work}
+
+\subsection{Image-Based and Design-Oriented Map Generation}
+
+Controlled diffusion approaches use vector data, remote-sensing imagery, reference tiles, or text prompts to constrain generated map images. These systems are strongest when spatial control is explicit: vector- or semantic-condition inputs reduce some hallucination risk, while remote-sensing-to-map methods add scale conditioning and contextual references to approximate cartographic generalization. SCGM/CSCMG-style artifacts are especially relevant because they treat generated maps as tiled, scale-aware outputs rather than isolated images. Their evaluation must therefore consider topology, line continuity, label reintegration, and boundary behavior, not only image similarity.
+
+Text-to-map generation has a different dependency. MapGenerator-style datasets pair natural-language descriptions with map images, making captions the main control signal (Zhang et al., 2025). This enables promptable map synthesis, but it also makes caption quality part of the benchmark. If captions are generic, underspecified, or weakly aligned with map content, a model may learn map-like appearance without learning robust spatial semantics. The main open problems across image-based systems are therefore topology, text, scale, and tile consistency: roads may break across boundaries, labels may be avoided, and plausible colors may hide missing cartographic structure.
+
+\subsection{Agentic Cartography and Evaluation Gap}
+
+LLM agents offer a complementary path because they can retrieve data, write GIS code, call mapping libraries, and revise outputs. This paradigm preserves authoritative geodata and can produce editable workflows, but it is brittle in ways that screenshots alone do not reveal. Agents may use wrong columns, ignore CRS, choose poor classifications, omit map elements, or generate code that executes without producing a valid artifact. Recent VGI mapping agents, multimodal style agents, and map-design assistants illustrate the promise of tool-using cartographic AI, but they also show why post-generation validation is essential (Song et al., 2025; Wang et al., 2025).
+
+Design-subtask systems for color, labels, symbols, storytelling, and style transfer provide useful evaluation lessons (Burghardt et al., 2025; Li et al., 2025b; Yang et al., 2025). These tasks are narrower than full map generation, but their rubrics are often sharper: a color ramp must fit data semantics and accessibility, labels must avoid collisions, and style transfer must preserve geometry. Full Geo-GenAI map evaluation should borrow this specificity. A map can pass an image metric while failing legends, labels, joins, or accessibility; a style agent can preserve geometry while choosing ambiguous symbology.
+
+Across paradigms, the gap is not the absence of metrics but the lack of artifact-matched validation. Controlled diffusion needs topology and continuity checks. Text-to-map data need caption-fidelity audits. LLM-code systems need execution, linting, and rendered-output QA. Design-subtask systems need rubrics tied to the generated object. This paper contributes a shared reliability vocabulary across these cases: reproducibility, data grounding, spatial faithfulness, artifact validity, cartographic completeness, evaluator robustness, and repairability.
+
+This positioning also clarifies what the paper does not try to do. It does not rank foundation models, propose a new map generator, or treat automated visual judges as a substitute for cartographic expertise. Instead, it asks what evidence a reader would need before trusting a generated map artifact. That question is deliberately practical. A GIS analyst, cartographer, or spatial-data steward needs to know whether the data source is recoverable, whether the map was conditioned on the intended geography, whether the output can be opened and inspected, and whether failures are detectable. Existing Geo-GenAI papers often contain some of this evidence, but it is rarely organized as a chain from input to output to validation.
+
+The framework also speaks to a broader tension in generative cartography. Image-based systems can be visually expressive and efficient, but their outputs may be difficult to edit, inspect, or connect back to authoritative data. Code- and agent-based systems are more inspectable and repairable, but they are exposed to ordinary software failures and to GIS-specific errors such as CRS assumptions, invalid geometries, and schema mismatches. Design-assistant systems may be highly useful for bounded subtasks, yet their narrow evaluation does not prove full workflow reliability. Treating all three as artifact chains makes these trade-offs explicit. It allows a paper to say not only that a system produces good examples, but also which links in the production chain are controlled, which are merely plausible, and which remain unvalidated.
+
+\section{Conceptual Framework: Generated Maps as Artifact Chains}
+
+We define a Geo-GenAI map artifact chain as the linked sequence of source geographic data, task prompt or caption, conditioning information or tool schema, generated intermediate artifact, rendered map output, validation trace, and repair history. Each link can fail independently. A caption may be underspecified; a tile may be paired correctly but lack cascade references; a code file may execute but join the wrong field; a rendered image may contain a legend but use an unsuitable color ramp. The framework therefore evaluates the artifact type rather than only the final screenshot, preserves geospatial metadata and provenance, and reports repair loops only when deterministic validation and model-generated changes are separated.
+
+The framework operationalizes reliability through five core dimensions. Reproducibility asks whether inputs, code, models, splits, and scoring procedures can be reconstructed. Data grounding asks whether prompts, captions, schemas, and outputs refer to the actual geographic data rather than invented objects or columns. Spatial faithfulness asks whether geometry, topology, scale, and neighborhood relations are preserved, including tile-edge continuity for tiled outputs and CRS/geometry validity for choropleths. Cartographic completeness asks whether the output contains the elements needed for use, such as title, legend, classification, source note, readable layout, and appropriate interactivity. Artifact validity asks whether the generated object exists in the required form and can be inspected or reused.
+
+This view leads to a failure model spanning pre-generation, generation, and post-generation stages. Pre-generation failures include incomplete releases, ambiguous captions, missing CRS metadata, and inconsistent split definitions. Generation failures include hallucinated features, broken tile continuity, missing imports, wrong filenames, and schema hallucinations. Post-generation failures include blank images, missing legends, invalid HTML, unparseable diagnostics, and repair loops that improve code appearance without producing valid artifacts. The experiments target these stages with release audits, caption proxy review, SCGM continuity and generated-output baselines, and choropleth execution/artifact QA.
+
+The study is organized as an RQ-to-evidence matrix rather than a single leaderboard. RQ1 uses inventories and blocker classification for reproducibility. RQ2 uses deterministic caption heuristics, visual proxy review, VLM screening, and adjudication readiness for caption grounding. RQ3 uses split coverage, cascade-reference coverage, leakage-guarded baselines, image metrics, and edge continuity for remote-sensing-to-map outputs. RQ4 uses geodata linting, generated-code safety scanning, execution logs, artifact scoring, screenshot QA, and repair loops for LLM-code cartography. RQ5 maps these results into a cross-paradigm failure taxonomy. This structure keeps evidence comparable while respecting the different contracts of raster images, tiled map outputs, and executable GIS code.
+
+The distinction between proxy evidence and cartographic evidence is especially important. Proxy layers such as color statistics, CLIP similarity, VLM judgments, or screenshot dynamic range are useful because they are cheap and reproducible, but they are not the final object of inference. They help locate where a human cartographic reviewer, a stronger domain-specific validator, or a more expensive reproduction should look. The framework therefore treats cheap metrics as filters and diagnostics rather than as final proof of map quality.
+
+This distinction affects how negative evidence is interpreted. In a conventional benchmark, failed generations may be discarded as unusable runs. In an artifact-chain audit, they are central observations. A blank PNG, a missing HTML file, a schema hallucination, or a tile seam discontinuity identifies a broken contract between model output and map-production requirements. The same is true for evaluator disagreement. When two VLMs agree that a road or water feature is visible but disagree about whether the caption is semantically supported, the disagreement is not just noise; it identifies the level at which automated evaluation becomes unstable. Reporting that instability makes the reliability claim more precise.
+
+The framework also separates validity from quality. Validity asks whether an artifact exists, parses, uses the expected data, and satisfies minimal structural requirements. Quality asks whether the map is cartographically effective, legible, semantically faithful, and appropriate for its purpose. A system can pass validity and fail quality, as when code writes a map with poor symbolization. It can also appear visually attractive while failing validity, as when an image has no recoverable data lineage. Both failures matter, but they require different evidence. This separation is useful for designing staged evaluation pipelines: first check release and file integrity, then structural and geospatial validity, then cartographic quality and task fitness.
+
+\section{Data and Artifacts}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\linewidth]{figures/figure_02_dataset_inventory.png}
+\caption{Dataset inventory for the local Geo-GenAI artifact audit.}
+\label{fig:dataset-inventory}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/mapgenerator_proxy_review_contact_sheet.jpg}
+\caption{MapGenerator proxy-review contact sheet showing paired map images and caption-fidelity triage examples.}
+\label{fig:mapgenerator-contact-sheet}
+\end{figure}
+
+
+The study uses public or locally reproducible artifact groups that represent distinct Geo-GenAI paradigms and contain enough material for at least one audit. The SCGM/CSCMG dataset provides remote-sensing images, target map tiles, and cascade references; base \texttt{rs\_256} and \texttt{map\_256} pairs match one-to-one in train and validation splits, but cascade-reference folders are smaller than the base set. MapGenerator provides 750 training and 100 evaluation image-caption pairs, with available images at 1024 by 1024 pixels. The choropleth materials provide Portugal wildfire data, shapefiles, static PNGs, interactive HTML outputs, and prompt/code artifacts from a ChatGPT-4 choropleth case study (Pannoon and Netek, 2025). GeoGuard is included as a workflow-spec validation testbed rather than as an artifact from the surveyed literature.
+
+The empirical scope is deliberately conservative. A system is included in the experiment only when released materials allow reproducibility, fidelity, continuity, execution, or artifact-quality checks. Conceptual papers remain in the literature taxonomy but are not treated as reproduction targets without inspectable data, code, outputs, or benchmark descriptions. Claims requiring unavailable proprietary model versions, private APIs, or unbounded manual interpretation are recorded as blockers rather than inferred. For example, the choropleth benchmark does not attempt to reproduce a historical ChatGPT interface; it uses the released data as a controlled benchmark for reproducible coding models and repair loops. Likewise, the SCGM experiment audits available coverage and implements lower-bound generated-output baselines rather than claiming to reproduce the original diffusion model.
+
+This conservative inclusion rule is methodological rather than dismissive. A paper can be important even when its exact model run cannot be reproduced locally. The audit simply separates literature significance from inspectable evidence. That separation prevents over-claiming and makes the manuscript useful to future benchmark builders: missing weights, incomplete reference sets, undocumented prompts, and inaccessible evaluation scripts become design requirements for the next release rather than silent weaknesses.
+
+The selected artifacts also span different forms of geographic representation. MapGenerator emphasizes the relationship between language and rendered cartographic images. SCGM/CSCMG emphasizes image-to-image translation under tiled spatial context. The choropleth benchmark emphasizes vector geodata, tabular joins, thematic classification, and executable visualization. These differences are deliberate. A reliability framework that works only for one representation type would be too narrow for emerging Geo-GenAI systems, which increasingly mix raster, vector, text, code, and interaction artifacts within the same workflow.
+
+The study also keeps a distinction between released artifacts and research claims. Released artifacts can be inspected directly; claims about models, user studies, or proprietary runs may require trust in the paper text unless the corresponding materials are available. The audit therefore avoids treating unavailable components as failures of the original studies. Instead, it records them as limits on what can be independently checked. This distinction is useful for a field in transition, where some important work will rely on APIs, commercial systems, or large training runs that cannot be fully archived, while other work can make stronger reproducibility claims through smaller but complete artifact chains.
+
+\section{Methods}
+
+The methods are designed as a lightweight reliability layer that can be rerun on a workstation before more expensive generation experiments. Each step writes machine-readable outputs so manuscript displays can be regenerated from experiment artifacts rather than hand-entered.
+
+\subsection{Release, Reproducibility, and Caption Audits}
+
+For each artifact group, we count files, sizes, readme/license availability, code availability, model or prompt availability, and evaluation blockers. The audit distinguishes data reproducibility from evaluation reproducibility: a release may provide inspectable files while omitting model weights, exact prompts, split definitions, or scoring procedures. This distinction is central for Geo-GenAI because many releases provide example outputs without freezing the generative system that produced them.
+
+For MapGenerator, we verify image existence and dimensions, parse description spreadsheets, and compute caption heuristics for roads, water, green areas, POIs, labels, directions, intersections, and generic no-feature claims. We then run a deterministic proxy review on 200 sampled image-caption pairs using simple visual signals for water-like pixels, green land-cover-like pixels, dark text/detail pixels, low-saturation bright areas, and edge density. These proxies are not semantic ground truth; they are a reproducible triage layer for identifying captions that need human or VLM review. Local VLM reviews, paired agreement analysis, CLIP-style image-text screening, and calibrated multi-judge consensus are used only as evaluator-stress evidence and adjudication support, not as expert cartographic labels.
+
+\subsection{SCGM Tile and Generated-Output Evaluation}
+
+For SCGM/CSCMG, we index tile filenames by zoom, x, and y, measure base-pair matching, and measure cascade-reference coverage. For validation tiles, we compute edge continuity as mean absolute RGB difference across shared tile borders. This creates a reference distribution for target maps and a comparable metric for generated outputs.
+
+We also build leakage-guarded generated-output baselines. Exact train-validation tile-id matches are excluded before retrieval or learning. The baselines include color-statistic retrieval, multi-feature retrieval, learned forest regression, compact neural MLP, local-context ridge, convolutional filter-bank ridge, patch-embedding retrieval, and a tiny trained CNN. These are not presented as replacements for the official diffusion model. Their purpose is to exercise the evaluation pipeline and reveal metric trade-offs among MAE, PSNR, global luma SSIM, and edge continuity. Contact sheets are used to interpret whether improved metrics reflect cartographic detail or merely smooth color fields.
+
+\subsection{Choropleth Artifact QA and Repair Evaluation}
+
+For choropleth materials, we lint raw geodata for required columns, CRS, invalid geometries, empty geometries, and thematic field types. Released PNG and HTML artifacts are checked for file presence, non-empty content, and coarse HTML map structure. A deterministic reference baseline uses the same released data to repair invalid geometry, normalize missing CRS metadata to EPSG:4326 when coordinates are lon/lat, render a static choropleth, render a Folium HTML map, plot an annual burned-area time series, and write diagnostics. This positive control establishes that the benchmark data and environment are sufficient for success.
+
+The expanded code-generation benchmark uses 12 prompts and two prompting modes. Basic prompts state the mapping request with minimal data grounding, while Rules prompts provide file names, known columns, data issues, output names, CRS/geometry repair rules, and cartographic expectations. Two local coding models, \texttt{qwen2.5-coder:7b} and \texttt{deepseek-coder:6.7b}, are evaluated under static safety scanning, controlled execution, and artifact scoring. Scores distinguish partial grounding from complete artifact success: a script may mention the right files or repairs, but it succeeds only if it executes and writes the requested outputs.
+
+Repair is evaluated as a validator-gated intervention. One-pass and iterative repair runs receive previous code, stderr, created-file lists, failed rubric checks, task prompts, and required outputs. Each repaired script is safety-scanned, executed, and rescored before another iteration is attempted. Screenshot-level QA then checks rendered PNGs and headless-browser screenshots for size, dynamic range, non-white coverage, color diversity, edge detail, and text-like detail. VLM review is used as a sensitivity layer for screenshot-passing artifacts, with paired agreement and schema adherence reported separately from expert truth.
+
+All methods are intentionally modest. The caption proxy does not claim to understand map semantics; the SCGM baselines do not claim to match diffusion models; the choropleth benchmark does not claim that local coding models represent all frontier systems. Their role is to expose reliability contracts that are easy to miss in polished demonstrations. If a weak baseline already reveals leakage sensitivity, seam artifacts, or the gap between execution and artifact success, then a stronger generator should be expected to report at least the same validation layers.
+
+The methodological emphasis is on layered evidence. The release audit establishes what can be inspected. The caption audit establishes whether language supervision is sufficiently grounded to support generation claims. The SCGM baselines establish whether the evaluation pipeline can score generated outputs under leakage controls and neighborhood constraints. The choropleth benchmark establishes whether generated code satisfies the full route from geodata to rendered artifacts. Each layer is intentionally simple enough to be rerun, but each addresses a failure mode that can invalidate a stronger-looking result. This makes the approach suitable as a preflight for future model papers: before claiming high-quality generated maps, authors can show that their artifact chain passes basic reproducibility, grounding, spatial, structural, and repair checks.
+
+This layered design also helps avoid false precision. A single aggregate score would hide too much. If a text-to-map dataset has complete files but weak caption grounding, its reliability profile is different from a code-generation system that has strong data grounding but poor artifact completion. If an RS-to-map baseline has low seam error because it over-smooths roads and labels, the metric is meaningful but not sufficient. The paper therefore reports diagnostic patterns rather than claiming a universal reliability index. The cross-paradigm matrix is intended as an interpretive aid: it shows where evidence is strong, where evidence is proxy-level, and where validation is still missing.
+
+The repair experiments are also designed to avoid a common ambiguity in LLM-agent evaluation. A conversational repair can look successful because the revised code is more fluent or because the model explains a plausible fix. The benchmark does not count such changes as success unless the repaired script passes safety scanning, executes, and produces the requested artifacts. This strictness is important for GIS workflows, where small errors in joins, CRS, or filenames can silently change the map. The validator-gated design therefore treats repair as an empirical intervention with observable outcomes, not as a qualitative impression of improvement.
+
+\section{Results}
+
+\subsection{Release and Caption Findings}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/mapgenerator_flagged_contact_sheet.jpg}
+\caption{MapGenerator flagged-pair contact sheet used to prioritize caption-fidelity review.}
+\label{fig:mapgenerator-flagged-sheet}
+\end{figure}
+
+
+The artifact inventory shows that file-level availability and evaluation reproducibility are different properties. SCGM provides a large available dataset with complete base RS-map pairs, but cascade references are incomplete relative to the base set. MapGenerator provides accessible images and captions, but the available train count differs from survey notes and caption grounding cannot be assumed from file completeness. The choropleth repository provides data and outputs, but the original ChatGPT model/version environment is not frozen. These findings answer RQ1 by showing why Geo-GenAI releases should report data, code, model, split, and evaluation availability separately.
+
+The insight is not that current releases are unusable. Rather, each release supports a different level of claim. SCGM can support data-coverage and generated-output diagnostics even when exact cascade-conditioned reproduction remains blocked. MapGenerator can support caption and image-pair audits even before a full text-to-map model is retrained. The choropleth materials can support controlled code-generation and repair experiments even when the original commercial chat environment is unavailable. Reproducibility is therefore graded, not binary, and a useful audit should state which claims are supported by the preserved artifacts.
+
+MapGenerator contains 750 training pairs and 100 evaluation pairs in the available release, with no missing images and 1024 by 1024 pixel dimensions. Captions average about 51-54 words, but heuristics flag many captions that lack explicit spatial relations or make generic negative claims. In the 200-pair proxy review, MGEval averages 0.946 proxy fidelity with 34 medium-severity cases, while MapTrain averages 0.914 with 53 medium-severity cases and one high-severity case. The most common issues are generic no-feature claims on visually rich maps, possible water omissions, and road captions lacking relation terms.
+
+The evaluator layer reinforces rather than replaces this caution. Granite and qwen2.5vl agree on low-level visible features in 73 of 79 comparable judgments, but exact caption-support agreement is only 3 of 20 pairs; qwen is stricter in 15 of 20 cases. CLIP-style image-text screening completes all 200 pairs, but its cosine scores are weakly associated with the deterministic proxy severity groups. Calibrated multi-judge consensus yields only 1 high-confidence caption case out of 20 paired VLM items. Together, these results answer RQ2: the dataset is useful, but caption fidelity is an artifact property that needs explicit adjudication rather than an assumption.
+
+This matters for training as well as evaluation. A model trained on weakly grounded captions may still learn convincing map aesthetics, but the prompt channel will be noisy: missing relations, unsupported negative claims, or vague feature descriptions reduce the connection between language and geography. The practical recommendation is to treat caption review as dataset curation. Rather than discard the dataset, future work can prioritize medium- and high-severity pairs for expert review, improve caption schemas, and report how much of the training and evaluation set has been adjudicated.
+
+The caption findings also highlight a subtle difference between visual alignment and geographic alignment. Generic image-text similarity can indicate that an image and caption belong to the same broad domain, but faithful map generation requires more specific commitments: which features are present, how they are arranged, whether labels or landmarks are mentioned, and whether the caption omits salient geographic structure. A caption that says a map contains roads and green space may be broadly aligned with many urban map images, yet still be too underspecified for evaluating whether a generated map preserved the intended spatial relations. This is why the paper reports multiple screening layers instead of relying on one embedding score or one VLM verdict.
+
+The MapGenerator audit therefore reframes caption quality as a geospatial data-quality problem. Captions are not merely natural-language annotations; in a text-to-map setting they become part of the control interface and part of the evaluation target. If the control interface is vague, the model receives weak supervision. If the evaluation target is vague, reviewers cannot tell whether a generated map failed or whether the prompt was under-specified. This suggests that future text-to-map datasets should report caption schemas, spatial-relation coverage, named-feature coverage, and adjudication status in the same way that spatial datasets report CRS, geometry validity, and attribute fields.
+
+\subsection{SCGM Coverage and Continuity}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\linewidth]{figures/figure_04_scgm_edge_continuity.png}
+\caption{SCGM target-tile edge-continuity reference distribution.}
+\label{fig:scgm-edge-continuity}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/scgm_retrieval_baseline_contact_sheet.jpg}
+\caption{SCGM retrieval-baseline visual evidence sheet with remote-sensing inputs, generated map tiles, and target maps.}
+\label{fig:scgm-retrieval-sheet}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/scgm_tiny_cnn_contact_sheet.jpg}
+\caption{SCGM tiny-CNN generated-output contact sheet, illustrating smoothed cartographic detail despite learned reconstruction.}
+\label{fig:scgm-tiny-cnn-sheet}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\small
+\tbl{SCGM generated-output baseline comparison with leakage guards.}{%
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llllll}
+\toprule
+Baseline & Validation outputs & Leakage guard & MAE RGB mean & SSIM luma mean & Edge continuity mean \\
+\midrule
+color-stat retrieval & 100 & 6 & 16.767246 & 0.245472 & 20.089735 \\
+multi-feature retrieval & 100 & 6 & 21.684555 & 0.290337 & 24.089735 \\
+learned forest & 100 & 6 & 17.362703 & 0.409008 & 4.611871 \\
+neural MLP & 100 & 6 & 30.725883 & 0.303307 & 12.132487 \\
+local-context ridge & 100 & 6 & 17.542248 & 0.361186 & 8.075412 \\
+convolutional filter-bank ridge & 100 & 6 & 19.14752 & 0.347422 & 6.235243 \\
+patch-embedding retrieval & 100 & 6 & 16.335779 & 0.273621 & 11.403972 \\
+trained tiny CNN & 100 & 6 & 26.100397 & 0.366129 & 9.221896 \\
+\bottomrule
+\end{tabular}%
+}
+}
+\label{tab:scgm-comparison}
+\end{table}
+
+
+SCGM/CSCMG base RS-map pair coverage is complete for train and validation splits, but cascade-reference coverage is incomplete. Target map tiles have much lower edge RGB discontinuity than remote-sensing images, providing a reference baseline for generated tile continuity. This matters because a tile can look plausible in isolation while failing as part of a map mosaic.
+
+The generated-output baselines show why SCGM evaluation should not rely on a single image metric. Color-stat retrieval produces 100 validation outputs with mean MAE 16.77, PSNR 19.93, SSIM 0.245, and poor edge continuity at 20.09. Multi-feature retrieval improves SSIM to 0.290 but worsens MAE, PSNR, and continuity. The learned forest baseline improves SSIM to 0.409 and edge continuity to 4.61, but contact sheets show over-smoothed outputs that preserve broad water/land fields while losing roads, labels, and symbol detail. The tiny CNN similarly learns pale terrain and water fields but smooths away cartographic structure, with MAE 26.10, PSNR 18.47, SSIM 0.366, and edge continuity 9.22.
+
+The mosaic neighbor-seam audit confirms the same trade-off at the tile-neighborhood level. For available adjacent generated pairs, target-map seams average 4.47 RGB absolute difference. Generated seams range from 4.61 for learned forest to 24.09 for multi-feature retrieval. Low seam error is therefore not automatically cartographic success: it may indicate coherent continuation, but it may also indicate excessive smoothing. This answers RQ3. File coverage and leakage guards are necessary, but generated map tiles still require spatial and cartographic validation that distinguishes similarity, continuity, and usable map detail.
+
+The SCGM result is a useful warning for future generative map benchmarks. A single average metric can reward the wrong behavior. Over-smoothed outputs may look continuous and score well on seam metrics while erasing roads and labels; patch-like retrieval can improve local color similarity while breaking global structure; learned regressors can recover broad land-water fields without learning symbolization. For map generation, the evaluation target is not only visual proximity to a tile but the preservation of cartographic function across scale, neighborhood, and symbol classes.
+
+This result does not imply that image metrics are useless. Rather, it shows that they must be interpreted as a bundle. MAE and PSNR reflect pixel-level closeness, SSIM reflects broad luminance structure, and edge continuity reflects mosaic behavior. None of them directly measures whether roads remain connected, whether labels are readable, or whether symbols preserve their meaning. The contact sheets therefore play an important role: they reveal when numerical improvements are caused by smoothing rather than cartographic recovery. For future SCGM-style work, the implication is that quantitative reports should pair image metrics with topology-aware, symbol-aware, and neighborhood-aware checks. Even a strong diffusion reproduction would need this layered interpretation because a visually impressive tile may still fail at the seams or at fine cartographic detail.
+
+The leakage guard is another important result. Retrieval baselines are deliberately simple, but they expose whether train and validation splits contain exact or near-exact tile identifiers. Without an explicit leakage check, a nearest-neighbor method could appear stronger than it is by copying a closely related map tile. In geospatial machine learning, where nearby tiles can be highly autocorrelated, this risk is especially acute. Reporting leakage guards should therefore become routine for tiled GeoAI map-generation benchmarks.
+
+\subsection{Choropleth Geodata, Artifact QA, and Repair Benchmark}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/choropleth_reference_interactive.png}
+\caption{Reference interactive choropleth screenshot used as a deterministic positive-control map artifact.}
+\label{fig:choropleth-reference}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/choropleth_screenshot_qa_contact_sheet.jpg}
+\caption{Screenshot-level choropleth QA contact sheet spanning reference, validator, and generated/repaired map artifacts.}
+\label{fig:choropleth-screenshot-sheet}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\small
+\tbl{Choropleth code-generation benchmark by model and prompting mode.}{%
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Model & Mode & Generated & Safe & Executed & Complete & Mean score & Max score \\
+\midrule
+deepseek-coder\_6.7b & basic & 12 & 10 & 1 & 0 & 0.176 & 0.500 \\
+deepseek-coder\_6.7b & rules & 12 & 12 & 1 & 0 & 0.501 & 0.833 \\
+qwen2.5-coder\_7b & basic & 12 & 12 & 0 & 0 & 0.059 & 0.250 \\
+qwen2.5-coder\_7b & rules & 12 & 12 & 0 & 0 & 0.490 & 0.600 \\
+validator\_repair\_reference & validator & 12 & 12 & 12 & 12 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}%
+}
+}
+\label{tab:choropleth-models}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\tbl{Screenshot-level choropleth artifact QA summary.}{%
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Source & Artifact kind & Checked & Existing & HTML rendered & Screenshot QA pass & Pass rate existing \\
+\midrule
+deepseek-coder\_6.7b & interactive\_html & 22 & 0 & 0 & 0 & 0.000 \\
+deepseek-coder\_6.7b & static\_png & 22 & 0 &  & 0 & 0.000 \\
+deepseek-coder\_6.7b & time\_series\_png & 22 & 0 &  & 0 & 0.000 \\
+qwen2.5-coder\_7b & interactive\_html & 24 & 0 & 0 & 0 & 0.000 \\
+qwen2.5-coder\_7b & static\_png & 24 & 0 &  & 0 & 0.000 \\
+qwen2.5-coder\_7b & time\_series\_png & 24 & 0 &  & 0 & 0.000 \\
+reference & interactive\_html & 1 & 1 & 1 & 1 & 1.000 \\
+reference & static\_png & 1 & 1 &  & 1 & 1.000 \\
+reference & time\_series\_png & 1 & 1 &  & 1 & 1.000 \\
+repair\_qwen2.5-coder\_32b & interactive\_html & 46 & 0 & 0 & 0 & 0.000 \\
+\bottomrule
+\end{tabular}%
+}
+}
+\label{tab:screenshot-qa}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/figure_05_choropleth_benchmark_scores.png}
+\caption{Choropleth benchmark score summary across model and prompting conditions.}
+\label{fig:choropleth-scores}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/figure_07_screenshot_level_qa.png}
+\caption{Screenshot-level QA pass counts for generated, repaired, validator, and reference map artifacts.}
+\label{fig:screenshot-qa}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\small
+\tbl{Sample rows from the iterative validator-gated repair sweep.}{%
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Source model & Mode & Prompt & One-pass score & Final iteration & Final score & Complete \\
+\midrule
+deepseek-coder\_6.7b & basic & C001\_static\_burned\_area & 0.500 & 3 & 0.750 & False \\
+deepseek-coder\_6.7b & basic & C002\_static\_number\_fires & 0.500 & 2 & 1.000 & True \\
+deepseek-coder\_6.7b & basic & C004\_missing\_crs\_repair & 0.571 & 3 & 0.857 & False \\
+deepseek-coder\_6.7b & basic & C006\_join\_diagnostics & 0.500 & 3 & 0.833 & False \\
+deepseek-coder\_6.7b & basic & C007\_wrong\_column\_guard & 0.600 & 2 & 1.000 & True \\
+deepseek-coder\_6.7b & basic & C008\_quantile\_classes & 0.400 & 3 & 0.600 & False \\
+deepseek-coder\_6.7b & basic & C009\_colorblind\_safe & 0.500 & 2 & 1.000 & True \\
+deepseek-coder\_6.7b & basic & C010\_interactive\_tooltips & 0.500 & 3 & 0.500 & False \\
+deepseek-coder\_6.7b & rules & C002\_static\_number\_fires & 0.500 & 2 & 1.000 & True \\
+deepseek-coder\_6.7b & rules & C003\_static\_full\_layout & 0.833 & 3 & 0.833 & False \\
+\bottomrule
+\end{tabular}%
+}
+}
+\label{tab:repair-sweep}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\tbl{Matched repair-model suite for near-miss choropleth cases.}{%
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Repair model & Matched cases & Safe attempts & Unsafe attempts & Completed cases & Completion rate & Mean final score \\
+\midrule
+qwen2.5-coder:14b & 8 & 14 & 0 & 3 & 3/8 & 0.829 \\
+qwen2.5-coder:7b & 8 & 14 & 0 & 3 & 3/8 & 0.808 \\
+deepseek-coder:6.7b & 8 & 4 & 6 & 0 & 0/8 & 0.204 \\
+\bottomrule
+\end{tabular}%
+}
+}
+\label{tab:repair-models}
+\end{table}
+
+
+The choropleth linter finds one invalid geometry in \texttt{boundary.shp} and missing CRS metadata in \texttt{mainlandburn.shp}. The deterministic reference baseline repairs these issues and produces all required artifact classes: static choropleth PNG, interactive HTML map, time-series PNG, and diagnostics JSON. Its diagnostics record 18 mainland district features, CRS normalization to EPSG:4326, geometry repair, 21 annual records from 2002 to 2022, and 2017 as the maximum burned-area year. This positive control shows that later LLM failures are not caused by missing benchmark inputs.
+
+Initial LLM-code generation exposes the gap between plausible code and complete map artifacts. For \texttt{qwen2.5-coder:7b}, all 24 scripts pass safety scanning but none execute successfully; Rules prompting improves partial grounding but not execution. For \texttt{deepseek-coder:6.7b}, two scripts return exit code 0, yet neither produces a complete set of requested outputs. Across initial clean runs, no script creates a nonblank PNG or valid interactive HTML artifact. The dominant errors are missing imports, schema hallucination, CRS/geometry handling, hard-coded file assumptions, wrong merge keys, and wrong filenames.
+
+Repair improves outcomes, but only when treated as a measured intervention. A one-pass \texttt{qwen2.5-coder:32b} repair condition over 46 failed or incomplete runs yields six complete benchmark successes and creates several valid diagnostics and nonblank static images, but still no valid HTML artifact under the Leaflet/GeoJSON check. The iterative validator-gated sweep is more effective: across 40 incomplete one-pass repairs, up to three additional feedback iterations complete 25 cases. A matched near-miss repair-model comparison shows model dependence, with qwen2.5-coder 7B and 14B each completing three of eight cases and deepseek-coder 6.7B completing none.
+
+Screenshot-level QA makes the artifact gap visible. The deterministic reference baseline passes 3 of 3 screenshot checks, and the validator/reference condition passes 36 of 36 checks across static maps, time-series figures, and rendered HTML maps. The 32B repair condition passes five static-map screenshot checks, while initial qwen and deepseek outputs pass zero. VLM review of screenshot-passing artifacts preserves the same broad ordering: validator/reference artifacts are consistently more usable than LLM-repair static maps. Paired VLM agreement is moderate for choropleths, 13 of 18 exact verdicts, but much weaker for MapGenerator semantic-support labels. These findings answer RQ4 and support RQ5: execution, artifact creation, screenshot validity, and evaluator robustness must be reported as separate links in the chain.
+
+The choropleth results also show why code generation is both fragile and promising. It is fragile because many failures are mundane: imports, field names, CRS assumptions, file outputs, and library-version details. It is promising because these failures are often observable and can be converted into structured feedback. The difference between one-pass repair and iterative validator-gated repair suggests that map agents should be designed around execution traces and artifact contracts from the beginning, not around conversational revision after a screenshot looks wrong.
+
+The positive-control condition is key to this interpretation. Because deterministic scripts can create the required static, interactive, time-series, and diagnostic artifacts from the same released data, incomplete LLM outputs cannot be explained away as benchmark infeasibility. This separation is often missing in generative-agent demonstrations. Without a positive control, a failed model run might reflect a weak model, a broken environment, ambiguous task instructions, or missing data. With the positive control, the benchmark establishes that the task is possible and that the remaining failures belong to model generation, repair strategy, or validation coverage.
+
+The screenshot layer adds another boundary between software success and cartographic success. In ordinary programming evaluation, an exit code may be a reasonable first signal. In cartography, it is insufficient. A script can run and still create a blank image, an unreadable plot, a placeholder HTML page, or a map lacking the requested layer. The screenshot QA does not claim to judge all design quality, but it catches this gap between file creation and inspectable output. Its value is practical: it prevents an experiment from counting a generated map as successful merely because a file exists.
+
+The VLM results should be read with similar caution. For choropleth screenshots, the two usable judges broadly agree on the stronger quality of deterministic reference artifacts. For MapGenerator captions, exact semantic-support agreement is weak even when feature-level agreement is high. This asymmetry suggests that VLMs may be more stable for coarse visual QA of rendered map artifacts than for judging whether a caption fully supports a map image. The paper therefore treats VLMs as prioritization tools: they identify cases that deserve human adjudication and reveal evaluator sensitivity, but they do not replace expert cartographic assessment.
+
+The repair benchmark also reveals an important design pattern for map agents. The most useful feedback is not generic instruction such as "fix the map"; it is structured evidence about what failed: the exact stderr, missing artifacts, expected filenames, known fields, CRS assumptions, geometry status, and scoring rubric. This is a cartographic analogue of test-driven software repair. The benchmark shows that when the model receives concrete validator feedback, additional cases can be recovered. However, the remaining failures show that feedback must be grounded in the data schema and artifact contract. A repair loop that only sees code text may improve style without solving the GIS problem.
+
+\section{Discussion}
+
+\subsection{Artifact-Chain Reliability Across Paradigms}
+
+The experiments show that Geo-GenAI reliability cannot be assessed at a single point in the workflow. A dataset can contain complete image files but weak caption constraints; a tile dataset can have complete base pairs but incomplete conditioning references; an LLM-generated workflow can execute without creating a complete map artifact. The final map-like image is only one endpoint. Trust depends on whether the chain before and after it is traceable to input data, preserves spatial constraints, and exposes validation results.
+
+The cross-paradigm comparison answers RQ5 by making different failures comparable without forcing one universal score. Text-to-map systems mainly fail semantically, through underspecified or disputed caption grounding. Remote-sensing-to-map systems fail spatially, especially through tile continuity and loss of cartographic detail. LLM-code systems fail through execution, schema, CRS, join, output, and design errors. These are different mechanisms, but they align with the same reliability dimensions: reproducibility, data grounding, spatial faithfulness, artifact validity, cartographic completeness, evaluator robustness, and repairability.
+
+\subsection{Reproducibility, Repairability, and Benchmark Design}
+
+The practical implication is that Geo-GenAI releases should include machine-readable manifests and validation traces, not only example outputs. Image-caption datasets should include split definitions, checksums, caption versions, and feature/caption statistics. Tiled map-generation datasets should include z/x/y indexing, neighbor availability, reference-scale availability, and leakage checks. LLM-code map outputs should include prompts, model versions, generated code, execution logs, artifacts, and validator reports. These details are not bureaucratic overhead; they determine whether claims can be inspected.
+
+Repairability is the strongest advantage of LLM-code cartography over pure image generation, but repair must be evaluated as a system. A repair loop needs a starting state, structured feedback, safety gate, execution gate, scoring gate, and stopping rule. The choropleth benchmark shows both the value and the limit of this approach: validator-gated repair recovers many incomplete cases, but it does not close the gap to deterministic positive controls, especially for interactive artifacts. The lesson is to report recoveries and stalls together, because failed repairs reveal which assumptions remain unresolved.
+
+Three benchmark-design recommendations follow. First, every Geo-GenAI benchmark should include a positive control so model failure can be separated from benchmark failure. Second, scoring should distinguish partial grounding from complete artifact validity; plausible code or good-looking tiles are not enough. Third, negative evidence should be preserved: failed scripts, stderr traces, unsafe generations, blank screenshots, and incomplete artifacts are central to understanding reliability. The contribution of this paper is therefore not a new generator but an evaluation stance: generated maps should be treated as auditable artifact chains whose failures are as informative as their successes.
+
+For GIScience, this stance connects GeoAI evaluation to longstanding concerns about provenance, uncertainty, and reproducibility. Generative systems make those concerns more urgent because the output may be persuasive even when the chain is broken. A trustworthy generated map should therefore be accompanied by evidence about what data were used, what transformations were attempted, what checks passed, what checks failed, and whether repair changed the artifact or merely changed the code. That evidence can be compact, but it should be explicit enough for another researcher to inspect the claim.
+
+The study also suggests how journals and reviewers might read future Geo-GenAI map-generation papers. Reviewers need not require every paper to run the same benchmark, but they can ask whether the validation contract matches the artifact type. For a text-to-map dataset, are captions grounded and are ambiguous cases adjudicated? For a tiled image generator, are split leakage and neighbor continuity checked? For an LLM mapping agent, are generated scripts executed, are output files inspected, and are failures reported? For design assistants, is the generated design object evaluated against the cartographic subtask it claims to solve? These questions are more informative than asking whether a paper has a visually compelling gallery.
+
+A final implication concerns the role of repair. Repairability should be treated as a first-class property of generated map systems. Image-generation systems may need repair through conditioning, inpainting, or vector constraints; code-generation systems may need repair through linting, execution feedback, and artifact contracts; design agents may need repair through critique and style constraints. What matters is not whether a model can produce a perfect first answer, but whether failures can be detected, localized, corrected, and revalidated. This shifts evaluation from one-shot generation toward accountable map-production workflows.
+
+The discussion also cautions against reading the cross-paradigm comparison as a competition among paradigms. Text-to-map, RS-to-map, and LLM-code approaches answer different production needs. Text-to-map systems are useful for exploring visual possibilities and language-conditioned design. RS-to-map systems are useful when raster context and map-like generalization are central. LLM-code systems are useful when authoritative data, editable workflows, and diagnostics matter. A mature Geo-GenAI ecosystem will likely combine them. The reliability question is therefore not which paradigm wins, but which validation layer must accompany each paradigm when it is used for cartographic work.
+
+For practitioners, the framework can be read as a checklist. Before using a generated map, ask whether the input data are known, whether the prompt or caption is grounded, whether spatial metadata survived, whether the output exists in an inspectable form, whether the visualization is readable, whether failures were logged, and whether any repair was revalidated. For researchers, the framework can be read as a reporting template. A paper does not need to include every table in the main text, but it should preserve enough machine-readable evidence for readers to trace central claims. This is the balance the manuscript adopts: the main article reports the reliability insights, while the package retains detailed ledgers, contact sheets, and run outputs.
+
+\section{Limitations}
+
+The claims are scoped to reproducible public artifacts and local model runs rather than universal model performance. The audit is not a census of all Geo-GenAI systems, the SCGM baselines are lower-bound generated-output diagnostics rather than an official diffusion reproduction, and the Portugal wildfire benchmark does not cover every thematic mapping task, projection, classification scheme, or interaction design. VLM labels are treated as screening and evaluator-stress evidence, not as expert cartographic ground truth. The strongest empirical upgrades are human caption and cartographic-quality validation, an official or cascade-conditioned RS-to-map reproduction, and a broader matched repair-model suite. These limitations define the boundary of the claim: the paper contributes a reproducible, artifact-aware, repair-oriented evaluation framework and shows where current evidence is strong, weak, or still awaiting adjudication.
+
+A further limitation is that the audit privileges artifact families that can be inspected locally. This favors reproducible releases over closed but potentially stronger systems. The trade-off is intentional: the paper evaluates what can be checked, not what might be possible under ideal proprietary access. Future work should combine the same artifact-chain protocol with expert human studies, larger model suites, and official reproductions where authors provide complete model and evaluation contracts.
+
+\section{Conclusion}
+
+Geo-GenAI map generation is moving quickly, but trustworthy cartographic generation requires more than plausible images. This paper reframes generated maps as artifact chains and shows how public Geo-GenAI artifacts can be audited for reproducibility, semantic fidelity, spatial continuity, rendered-output validity, evaluator robustness, and repairability. The results reveal both promise and fragility: available datasets and workflows are rich, but caption underspecification, incomplete conditioning references, geodata issues, brittle code generation, and evaluator disagreement remain. The proposed framework offers a path from impressive demonstrations toward reproducible, validated, and repairable cartographic AI.
+
+\section*{Acknowledgments}
+
+Not applicable.
+
+\section*{Declaration of Interest Statement}
+
+The authors report there are no competing interests to declare.
+
+\section*{Data Availability Statement}
+
+Code, summarized results, manuscript tables, and reproducibility materials supporting this study are available at https://github.com/ictu-se/geo-genai-reliability-artifact. Raw third-party datasets are source-linked in the repository data manifest and are available from the corresponding author upon reasonable request where redistribution is restricted.
+
+\section*{Software Availability Statement}
+
+The software supporting this study is available at https://github.com/ictu-se/geo-genai-reliability-artifact.
+
+
+\clearpage
+\nocite{*}
+\bibliographystyle{tfv}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,4 @@
+Paradigm,Dimensions,Total score,Mean score,Lowest score,Highest score
+LLM-generated choropleth maps,7,15,2.14,2,3
+Remote-sensing-to-map tiles,7,14,2.00,1,3
+Text-to-map image data,7,9,1.29,0,3

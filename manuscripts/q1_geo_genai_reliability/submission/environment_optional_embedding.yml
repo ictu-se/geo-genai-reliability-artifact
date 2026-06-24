@@ -1,0 +1,12 @@
+name: geo-genai-reliability-embedding
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy
+  - pandas
+  - pillow
+  - pip
+  - pip:
+      - torch
+      - transformers

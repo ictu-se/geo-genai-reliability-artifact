@@ -1,0 +1,10 @@
+Model,Source,Reviewed,Mean VLM quality,Verdicts,Title,Legend/colorbar,Readable,Choropleth
+granite3.2-vision:latest,reference,3,0.567,usable_with_minor_issues=3,0,0,3,3
+granite3.2-vision:latest,repair_qwen2.5-coder_32b,5,0.478,usable_with_minor_issues=3; failed=1; weak=1,0,0,4,5
+granite3.2-vision:latest,validator_repair_reference,10,0.7,usable_with_minor_issues=10,0,0,10,10
+llava-llama3:8b,reference,3,0.5,error=2; usable_with_minor_issues=1,0,0,1,1
+llava-llama3:8b,repair_qwen2.5-coder_32b,5,0.165,error=1; weak=2; publication_ready=1; usable_with_minor_issues=1,4,3,3,4
+llava-llama3:8b,validator_repair_reference,10,0,error=10,0,0,0,0
+qwen2.5vl:3b,reference,3,0.4,usable_with_minor_issues=2; failed=1,2,2,2,3
+qwen2.5vl:3b,repair_qwen2.5-coder_32b,5,0.22,failed=5,4,4,1,5
+qwen2.5vl:3b,validator_repair_reference,10,0.3,usable_with_minor_issues=10,0,10,10,10

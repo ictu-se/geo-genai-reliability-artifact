@@ -1,0 +1,10 @@
+Task,Model,Reviewed,Usable reviews,Errors,Usable rate pct,Score field,Mean score across groups,Panel role,Summary file
+Choropleth cartographic quality,granite3.2-vision:latest,18,18,0,100.0,mean quality,0.582,agreement_panel,experiments/05_choropleth_reliability_benchmark/outputs/scores/choropleth_vlm_cartographic_review_summary_granite3.2-vision_latest.json
+Choropleth cartographic quality,qwen2.5vl:3b,18,18,0,100.0,mean quality,0.307,agreement_panel,experiments/05_choropleth_reliability_benchmark/outputs/scores/choropleth_vlm_cartographic_review_summary_qwen2.5vl_3b.json
+Choropleth cartographic quality,llava-llama3:8b,18,5,13,27.8,mean quality,0.333,failed_candidate,experiments/05_choropleth_reliability_benchmark/outputs/scores/choropleth_vlm_cartographic_review_summary_llava-llama3_8b.json
+MapGenerator caption fidelity,granite3.2-vision:latest,20,20,0,100.0,mean alignment,0.972,agreement_panel,experiments/02_mapgenerator_image_text_audit/outputs/mapgenerator_vlm_caption_review_summary_granite3.2-vision_latest.json
+MapGenerator caption fidelity,qwen2.5vl:3b,20,20,0,100.0,mean alignment,0.885,agreement_panel,experiments/02_mapgenerator_image_text_audit/outputs/mapgenerator_vlm_caption_review_summary_qwen2.5vl_3b.json
+MapGenerator caption fidelity,llava-llama3:8b,20,16,4,80.0,mean alignment,0.328,candidate_partial,experiments/02_mapgenerator_image_text_audit/outputs/mapgenerator_vlm_caption_review_summary_llava-llama3_8b.json
+MapGenerator caption fidelity,llama3.2-vision:11b,20,0,20,0.0,mean alignment,,failed_candidate,experiments/02_mapgenerator_image_text_audit/outputs/mapgenerator_vlm_caption_review_summary_llama3.2-vision_11b.json
+MapGenerator caption fidelity,minicpm-v:latest,20,1,19,5.0,mean alignment,0.800,failed_candidate,experiments/02_mapgenerator_image_text_audit/outputs/mapgenerator_vlm_caption_review_summary_minicpm-v_latest.json
+MapGenerator caption fidelity,qwen3-vl:4b,10,1,9,10.0,mean alignment,0.700,failed_candidate,experiments/02_mapgenerator_image_text_audit/outputs/mapgenerator_vlm_caption_review_summary_qwen3-vl_4b.json

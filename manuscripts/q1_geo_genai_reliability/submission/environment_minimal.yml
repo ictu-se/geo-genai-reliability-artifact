@@ -1,0 +1,20 @@
+name: geo-genai-reliability
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - geopandas
+  - matplotlib
+  - numpy
+  - pandas
+  - pillow
+  - pyogrio
+  - pyproj
+  - rasterio
+  - scikit-image
+  - scikit-learn
+  - shapely
+  - pip
+  - pip:
+      - folium
+      - playwright

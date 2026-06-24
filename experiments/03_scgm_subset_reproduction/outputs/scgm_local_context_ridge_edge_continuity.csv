@@ -1,0 +1,13 @@
+split,folder,z,x,y,neighbor_x,neighbor_y,direction,edge_absdiff_rgb,tile,neighbor
+val,local_context_ridge_generated,14,7980,5147,7981,5147,right,6.069010,14_7980_5147_local_context_ridge.png,14_7981_5147_local_context_ridge.png
+val,local_context_ridge_generated,14,7990,5114,7991,5114,right,7.290365,14_7990_5114_local_context_ridge.png,14_7991_5114_local_context_ridge.png
+val,local_context_ridge_generated,14,7991,5104,7992,5104,right,4.635417,14_7991_5104_local_context_ridge.png,14_7992_5104_local_context_ridge.png
+val,local_context_ridge_generated,14,7993,5116,7993,5117,down,7.183594,14_7993_5116_local_context_ridge.png,14_7993_5117_local_context_ridge.png
+val,local_context_ridge_generated,14,7995,5116,7995,5117,down,12.412761,14_7995_5116_local_context_ridge.png,14_7995_5117_local_context_ridge.png
+val,local_context_ridge_generated,14,7996,5109,7996,5110,down,6.316406,14_7996_5109_local_context_ridge.png,14_7996_5110_local_context_ridge.png
+val,local_context_ridge_generated,14,7998,5114,7999,5114,right,10.625000,14_7998_5114_local_context_ridge.png,14_7999_5114_local_context_ridge.png
+val,local_context_ridge_generated,14,7999,5112,8000,5112,right,8.540364,14_7999_5112_local_context_ridge.png,14_8000_5112_local_context_ridge.png
+val,local_context_ridge_generated,14,8000,5112,8000,5113,down,9.973958,14_8000_5112_local_context_ridge.png,14_8000_5113_local_context_ridge.png
+val,local_context_ridge_generated,14,8004,5091,8005,5091,right,5.242188,14_8004_5091_local_context_ridge.png,14_8005_5091_local_context_ridge.png
+val,local_context_ridge_generated,14,8010,5105,8010,5106,down,7.276042,14_8010_5105_local_context_ridge.png,14_8010_5106_local_context_ridge.png
+val,local_context_ridge_generated,14,8010,5114,8010,5115,down,11.339844,14_8010_5114_local_context_ridge.png,14_8010_5115_local_context_ridge.png

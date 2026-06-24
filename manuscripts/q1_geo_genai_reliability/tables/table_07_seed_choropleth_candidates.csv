@@ -1,0 +1,7 @@
+Prompt,Candidate,Score,Passed,Failed checks
+P01_static_basic,p01_static_basic_naive.py,1.0,2/2,
+P02_static_with_crs_repair,p02_static_with_crs_repair.py,1.0,3/3,
+P03_interactive_basic,p03_interactive_basic.py,1.0,2/2,
+P04_csv_time_series,p04_csv_time_series.py,1.0,3/3,
+P05_robust_cartographic_output,reference_solution.py,1.0,5/5,
+P05_wrong_column,p05_wrong_column_failure.py,0.0,0/5,"execution_success, static, interactive, crs_repair, diagnostic_report"

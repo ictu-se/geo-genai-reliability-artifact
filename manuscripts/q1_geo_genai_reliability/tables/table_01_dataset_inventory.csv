@@ -1,0 +1,6 @@
+Dataset,Artifact type,Size,Files,Code,Local path
+SCGM / CSCMG,remote-sensing-to-map tile pairs,9.4 GB,522485,True,data/raw/SCGM
+MapGenerator MGTrain/MGEval,map image and natural-language description pairs,40.4 MB,852,True,data/raw/MapGenerator
+ChatGPT choropleth materials,"prompt outputs, choropleth data, static/interactive maps",473.9 MB,113,True,data/repos/Materials-for-Creating-maps-by-Artificial-Intelligence
+Generative AI mapmaking code,ControlNet-style training/evaluation code,246.1 KB,37,True,data/repos/generative-ai-mapmaking
+GeoGuard local LA County benchmark,vector/raster GIS data and generated workflow outputs,650.2 MB,169,True,data/raw/geoguard

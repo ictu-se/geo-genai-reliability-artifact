@@ -1,0 +1,10 @@
+Task,Model,Reviewed,Usable,Errors,Usable rate pct,Panel role
+Choropleth cartographic quality,granite3.2-vision:latest,18,18,0,100.0,agreement_panel
+Choropleth cartographic quality,qwen2.5vl:3b,18,18,0,100.0,agreement_panel
+Choropleth cartographic quality,llava-llama3:8b,18,5,13,27.8,failed_candidate
+MapGenerator caption fidelity,granite3.2-vision:latest,20,20,0,100.0,agreement_panel
+MapGenerator caption fidelity,qwen2.5vl:3b,20,20,0,100.0,agreement_panel
+MapGenerator caption fidelity,llava-llama3:8b,20,16,4,80.0,candidate_partial
+MapGenerator caption fidelity,llama3.2-vision:11b,20,0,20,0.0,failed_candidate
+MapGenerator caption fidelity,minicpm-v:latest,20,1,19,5.0,failed_candidate
+MapGenerator caption fidelity,qwen3-vl:4b,10,1,9,10.0,failed_candidate

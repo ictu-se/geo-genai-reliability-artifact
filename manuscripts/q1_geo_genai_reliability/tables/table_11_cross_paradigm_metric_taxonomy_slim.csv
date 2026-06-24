@@ -1,0 +1,6 @@
+Paradigm,Artifact,Failure modes,Evaluation,Repairability
+Text-to-map image generation,raster map image,caption mismatch; fake geography; broken topology; unreadable labels; weak editability,image-text similarity; OCR; VLM entity/relation checks; human cartographic review,low_to_medium
+Remote-sensing-to-map translation,paired raster map tile,tile-edge discontinuity; feature omission; scale inconsistency; weak natural-feature generalization,SSIM/PSNR/LPIPS; edge continuity; feature segmentation; zoom/content stratification,medium
+LLM-generated GIS/code maps,Python/Folium/GeoPandas code plus rendered map,execution errors; wrong columns; CRS mistakes; invalid geometries; weak legends/classification,execution tests; GIS lint; screenshot QA; repair-loop scoring,high
+Map style agents,stylesheet/config and rendered map,subjective style mismatch; semantic symbol errors; copyright/style leakage; weak legend semantics,style constraint checks; human/VLM preference; symbol consistency checks,medium
+Cartographic design subtasks,color/label/symbol outputs,accessibility errors; label collisions; cultural mismatch; missing multimodal context,task-specific metrics; accessibility checks; collision metrics; user studies,medium_to_high

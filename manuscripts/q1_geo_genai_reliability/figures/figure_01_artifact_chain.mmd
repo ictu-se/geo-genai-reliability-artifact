@@ -1,0 +1,14 @@
+flowchart LR
+  A[Source geodata] --> B[Prompt or caption]
+  B --> C{Geo-GenAI paradigm}
+  C --> D[Text-to-map image]
+  C --> E[RS-to-map tile]
+  C --> F[LLM GIS/code map]
+  D --> G[Image/VLM/OCR QA]
+  E --> H[Pixel + edge-continuity QA]
+  F --> I[Execution + GIS lint + screenshot QA]
+  G --> J[Failure taxonomy]
+  H --> J
+  I --> K[Lint feedback repair]
+  K --> F
+  I --> J

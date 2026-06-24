@@ -1,0 +1,3 @@
+task,total_items,urgent_items,final_labels,urgent_final_labels,label_counts,mean_final_score,completed_agreement_file,status
+choropleth_cartographic_quality,18,5,0,0,,,,no_final_labels_collected
+mapgenerator_caption_fidelity,20,17,0,0,,,,no_final_labels_collected

@@ -1,0 +1,5 @@
+Repair model,Scope,Cases,Max iters,Attempt rows,Safe attempts,Completed,Completion rate,Mean final score,Completed by iter
+qwen2.5-coder:32b,full incomplete one-pass set,40,3,89,89,25,25/40,0.856,iter 1: 10; iter 2: 11; iter 3: 4
+qwen2.5-coder:14b,near-miss pilot subset,8,2,14,14,3,3/8,0.829,iter 1: 2; iter 2: 1
+qwen2.5-coder:7b,near-miss pilot subset,8,2,14,14,3,3/8,0.808,iter 1: 2; iter 2: 1
+deepseek-coder:6.7b,near-miss pilot subset,8,2,10,4,0,0/8,0.204,none

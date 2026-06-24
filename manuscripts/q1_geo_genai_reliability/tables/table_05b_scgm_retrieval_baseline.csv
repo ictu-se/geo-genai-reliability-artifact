@@ -1,0 +1,7 @@
+Metric,Mean,Median,P10,P90,Note
+train candidates,200,,,,exact tile candidates excluded=6
+validation outputs,100,,,,same-zoom retrievals=100
+MAE RGB,16.767246,16.875938,4.401522,30.814087,retrieval baseline
+PSNR RGB,19.931509,18.702965,16.768648,24.497568,retrieval baseline
+Global SSIM luma,0.245472,0.229878,0.068687,0.457476,retrieval baseline
+Generated edge continuity,20.089735,22.808594,5.73802,35.796093,retrieval baseline

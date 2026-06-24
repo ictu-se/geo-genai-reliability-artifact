@@ -1,0 +1,13 @@
+metric,value,interpretation
+manifest_rows_available_to_release_audit,1014,"Rows are the current local evidence package, not a frozen DOI archive."
+license_matrix_rows,9,Rows separate author-controlled artifacts from source-linked or restricted upstream material.
+group_derived_experiment_outputs,785,Current manifest grouping used to draft the public release file map.
+group_evidence_ledgers,8,Current manifest grouping used to draft the public release file map.
+group_figures,7,Current manifest grouping used to draft the public release file map.
+group_human_validation_packets,40,Current manifest grouping used to draft the public release file map.
+group_latex_manuscript_package,7,Current manifest grouping used to draft the public release file map.
+group_manuscript_artifacts,23,Current manifest grouping used to draft the public release file map.
+group_project_scripts,42,Current manifest grouping used to draft the public release file map.
+group_release_metadata,14,Current manifest grouping used to draft the public release file map.
+group_submission_artifacts,54,Current manifest grouping used to draft the public release file map.
+group_tables,34,Current manifest grouping used to draft the public release file map.

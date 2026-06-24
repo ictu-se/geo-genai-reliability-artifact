@@ -1,0 +1,194 @@
+[
+  {
+    "baseline": "color-stat retrieval",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 20.089735,
+      "median": 22.808594,
+      "p90": 35.796094,
+      "max": 35.988281
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 10.695079,
+      "median": 3.683557,
+      "p90": 14.855922,
+      "max": 76.5
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  },
+  {
+    "baseline": "multi-feature retrieval",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 24.089735,
+      "median": 31.539062,
+      "p90": 35.861069,
+      "max": 40.063801
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 11.765274,
+      "median": 4.432653,
+      "p90": 17.107949,
+      "max": 70.976608
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  },
+  {
+    "baseline": "learned forest",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 4.611871,
+      "median": 4.508464,
+      "p90": 5.991927,
+      "max": 6.401042
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 1.75489,
+      "median": 1.219212,
+      "p90": 2.921877,
+      "max": 5.918129
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  },
+  {
+    "baseline": "neural MLP",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 12.132487,
+      "median": 0.011719,
+      "p90": 29.630208,
+      "max": 74.692711
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 15.686329,
+      "median": 0.005625,
+      "p90": 10.629434,
+      "max": 167.731003
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  },
+  {
+    "baseline": "local-context ridge",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 8.075412,
+      "median": 7.283203,
+      "p90": 11.268359,
+      "max": 12.412761
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 2.876555,
+      "median": 2.412579,
+      "p90": 3.653725,
+      "max": 10.409356
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  },
+  {
+    "baseline": "convolutional filter-bank ridge",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 6.235243,
+      "median": 5.794922,
+      "p90": 9.264193,
+      "max": 9.358073
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 2.33258,
+      "median": 1.984589,
+      "p90": 2.808676,
+      "max": 9.377193
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  },
+  {
+    "baseline": "patch-embedding retrieval",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 11.403971,
+      "median": 11.383463,
+      "p90": 16.962631,
+      "max": 18.78125
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 5.200429,
+      "median": 2.6724,
+      "p90": 8.198448,
+      "max": 28.570175
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  },
+  {
+    "baseline": "trained tiny CNN",
+    "neighbor_pairs_available": 12,
+    "neighbor_pairs_missing": 12,
+    "generated_seam_absdiff": {
+      "mean": 9.221897,
+      "median": 8.02474,
+      "p90": 14.250391,
+      "max": 15.696614
+    },
+    "target_seam_absdiff": {
+      "mean": 4.467556,
+      "median": 3.412109,
+      "p90": 8.819401,
+      "max": 9.363281
+    },
+    "stress_ratio": {
+      "mean": 3.392778,
+      "median": 2.417449,
+      "p90": 6.487469,
+      "max": 11.266082
+    },
+    "interpretation": "lower generated seam absdiff is smoother, but values below target can also indicate over-smoothing"
+  }
+]

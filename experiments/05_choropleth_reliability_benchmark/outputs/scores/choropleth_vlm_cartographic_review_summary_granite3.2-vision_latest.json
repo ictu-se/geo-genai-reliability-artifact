@@ -1,0 +1,41 @@
+{
+  "model": "granite3.2-vision:latest",
+  "reviewed_artifacts": 18,
+  "by_source_group": {
+    "reference": {
+      "reviewed_artifacts": 3,
+      "mean_vlm_cartographic_quality_score": 0.567,
+      "verdict_counts": {
+        "usable_with_minor_issues": 3
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 3,
+      "appears_choropleth_count": 3
+    },
+    "repair_qwen2.5-coder_32b": {
+      "reviewed_artifacts": 5,
+      "mean_vlm_cartographic_quality_score": 0.478,
+      "verdict_counts": {
+        "usable_with_minor_issues": 3,
+        "failed": 1,
+        "weak": 1
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 4,
+      "appears_choropleth_count": 5
+    },
+    "validator_repair_reference": {
+      "reviewed_artifacts": 10,
+      "mean_vlm_cartographic_quality_score": 0.7,
+      "verdict_counts": {
+        "usable_with_minor_issues": 10
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 10,
+      "appears_choropleth_count": 10
+    }
+  }
+}

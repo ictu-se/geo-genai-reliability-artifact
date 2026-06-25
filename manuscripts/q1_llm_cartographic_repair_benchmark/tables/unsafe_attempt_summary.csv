@@ -1,0 +1,7 @@
+repair_model,unsafe_attempts,safety_issue,attempts,share_of_unsafe
+deepseek-coder:6.7b,43,syntax_error:invalid syntax,38,0.884
+deepseek-coder:6.7b,43,syntax_error:unexpected EOF while parsing,4,0.093
+deepseek-coder:6.7b,43,syntax_error:EOL while scanning string literal,1,0.023
+qwen2.5-coder:7b,0,,0,0.000
+qwen2.5-coder:14b,0,,0,0.000
+qwen2.5-coder:32b,0,,0,0.000

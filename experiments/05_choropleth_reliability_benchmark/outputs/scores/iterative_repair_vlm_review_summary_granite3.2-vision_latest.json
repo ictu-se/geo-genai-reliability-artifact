@@ -1,0 +1,52 @@
+{
+  "vlm_model": "granite3.2-vision:latest",
+  "reviewed_artifacts": 24,
+  "by_repair_model": {
+    "deepseek-coder_6.7b": {
+      "reviewed_artifacts": 2,
+      "mean_score": 0.75,
+      "verdict_counts": {
+        "usable_with_minor_issues": 2
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 2,
+      "thematic_or_valid_plot_count": 2
+    },
+    "qwen2.5-coder_14b": {
+      "reviewed_artifacts": 9,
+      "mean_score": 0.667,
+      "verdict_counts": {
+        "usable_with_minor_issues": 7,
+        "weak": 1,
+        "publication_ready": 1
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 8,
+      "thematic_or_valid_plot_count": 8
+    },
+    "qwen2.5-coder_32b": {
+      "reviewed_artifacts": 7,
+      "mean_score": 0.75,
+      "verdict_counts": {
+        "usable_with_minor_issues": 7
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 7,
+      "thematic_or_valid_plot_count": 7
+    },
+    "qwen2.5-coder_7b": {
+      "reviewed_artifacts": 6,
+      "mean_score": 0.783,
+      "verdict_counts": {
+        "usable_with_minor_issues": 6
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 6,
+      "thematic_or_valid_plot_count": 6
+    }
+  }
+}

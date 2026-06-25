@@ -1,0 +1,36 @@
+# Repair Completion by Prompt Family
+
+| repair_model | family | cases | completed | completion_rate | mean_final_score |
+| --- | --- | --- | --- | --- | --- |
+| deepseek-coder:6.7b | attribute_join | 7 | 0 | 0.000 | 0.000 |
+| deepseek-coder:6.7b | cartographic_design | 6 | 0 | 0.000 | 0.000 |
+| deepseek-coder:6.7b | classification | 4 | 0 | 0.000 | 0.000 |
+| deepseek-coder:6.7b | crs_geometry | 7 | 1 | 0.143 | 0.143 |
+| deepseek-coder:6.7b | interactive | 4 | 0 | 0.000 | 0.000 |
+| deepseek-coder:6.7b | multi_output | 3 | 0 | 0.000 | 0.000 |
+| deepseek-coder:6.7b | static_basic | 6 | 0 | 0.000 | 0.083 |
+| deepseek-coder:6.7b | time_series | 3 | 1 | 0.333 | 0.333 |
+| qwen2.5-coder:14b | attribute_join | 7 | 2 | 0.286 | 0.710 |
+| qwen2.5-coder:14b | cartographic_design | 6 | 2 | 0.333 | 0.722 |
+| qwen2.5-coder:14b | classification | 4 | 0 | 0.000 | 0.400 |
+| qwen2.5-coder:14b | crs_geometry | 7 | 1 | 0.143 | 0.694 |
+| qwen2.5-coder:14b | interactive | 4 | 1 | 0.250 | 0.625 |
+| qwen2.5-coder:14b | multi_output | 3 | 0 | 0.000 | 0.389 |
+| qwen2.5-coder:14b | static_basic | 6 | 0 | 0.000 | 0.500 |
+| qwen2.5-coder:14b | time_series | 3 | 3 | 1.000 | 1.000 |
+| qwen2.5-coder:32b | attribute_join | 7 | 2 | 0.286 | 0.781 |
+| qwen2.5-coder:32b | cartographic_design | 6 | 4 | 0.667 | 0.889 |
+| qwen2.5-coder:32b | classification | 4 | 2 | 0.500 | 0.750 |
+| qwen2.5-coder:32b | crs_geometry | 7 | 6 | 0.857 | 0.980 |
+| qwen2.5-coder:32b | interactive | 4 | 3 | 0.750 | 0.875 |
+| qwen2.5-coder:32b | multi_output | 3 | 1 | 0.333 | 0.611 |
+| qwen2.5-coder:32b | static_basic | 6 | 4 | 0.667 | 0.875 |
+| qwen2.5-coder:32b | time_series | 3 | 3 | 1.000 | 1.000 |
+| qwen2.5-coder:7b | attribute_join | 7 | 1 | 0.143 | 0.600 |
+| qwen2.5-coder:7b | cartographic_design | 6 | 1 | 0.167 | 0.639 |
+| qwen2.5-coder:7b | classification | 4 | 0 | 0.000 | 0.400 |
+| qwen2.5-coder:7b | crs_geometry | 7 | 3 | 0.429 | 0.755 |
+| qwen2.5-coder:7b | interactive | 4 | 0 | 0.000 | 0.500 |
+| qwen2.5-coder:7b | multi_output | 3 | 0 | 0.000 | 0.389 |
+| qwen2.5-coder:7b | static_basic | 6 | 0 | 0.000 | 0.500 |
+| qwen2.5-coder:7b | time_series | 3 | 1 | 0.333 | 0.600 |

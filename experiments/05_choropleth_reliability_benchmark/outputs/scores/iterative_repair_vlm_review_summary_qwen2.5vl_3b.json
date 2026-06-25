@@ -1,0 +1,53 @@
+{
+  "vlm_model": "qwen2.5vl:3b",
+  "reviewed_artifacts": 24,
+  "by_repair_model": {
+    "deepseek-coder_6.7b": {
+      "reviewed_artifacts": 2,
+      "mean_score": 0.2,
+      "verdict_counts": {
+        "weak": 1,
+        "failed": 1
+      },
+      "title_count": 2,
+      "legend_or_colorbar_count": 1,
+      "readable_count": 1,
+      "thematic_or_valid_plot_count": 2
+    },
+    "qwen2.5-coder_14b": {
+      "reviewed_artifacts": 9,
+      "mean_score": 0.222,
+      "verdict_counts": {
+        "failed": 5,
+        "weak": 4
+      },
+      "title_count": 4,
+      "legend_or_colorbar_count": 5,
+      "readable_count": 3,
+      "thematic_or_valid_plot_count": 7
+    },
+    "qwen2.5-coder_32b": {
+      "reviewed_artifacts": 7,
+      "mean_score": 0.229,
+      "verdict_counts": {
+        "failed": 5,
+        "weak": 2
+      },
+      "title_count": 2,
+      "legend_or_colorbar_count": 1,
+      "readable_count": 0,
+      "thematic_or_valid_plot_count": 0
+    },
+    "qwen2.5-coder_7b": {
+      "reviewed_artifacts": 6,
+      "mean_score": 0.217,
+      "verdict_counts": {
+        "failed": 6
+      },
+      "title_count": 5,
+      "legend_or_colorbar_count": 2,
+      "readable_count": 3,
+      "thematic_or_valid_plot_count": 5
+    }
+  }
+}

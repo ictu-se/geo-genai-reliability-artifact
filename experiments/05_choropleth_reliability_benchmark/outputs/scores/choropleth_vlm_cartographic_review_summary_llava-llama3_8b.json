@@ -1,0 +1,43 @@
+{
+  "model": "llava-llama3:8b",
+  "reviewed_artifacts": 18,
+  "by_source_group": {
+    "reference": {
+      "reviewed_artifacts": 3,
+      "mean_vlm_cartographic_quality_score": 0.5,
+      "verdict_counts": {
+        "error": 2,
+        "usable_with_minor_issues": 1
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 1,
+      "appears_choropleth_count": 1
+    },
+    "repair_qwen2.5-coder_32b": {
+      "reviewed_artifacts": 5,
+      "mean_vlm_cartographic_quality_score": 0.165,
+      "verdict_counts": {
+        "error": 1,
+        "weak": 2,
+        "publication_ready": 1,
+        "usable_with_minor_issues": 1
+      },
+      "title_count": 4,
+      "legend_or_colorbar_count": 3,
+      "readable_count": 3,
+      "appears_choropleth_count": 4
+    },
+    "validator_repair_reference": {
+      "reviewed_artifacts": 10,
+      "mean_vlm_cartographic_quality_score": 0,
+      "verdict_counts": {
+        "error": 10
+      },
+      "title_count": 0,
+      "legend_or_colorbar_count": 0,
+      "readable_count": 0,
+      "appears_choropleth_count": 0
+    }
+  }
+}

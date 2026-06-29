@@ -1,0 +1,16 @@
+{
+  "error_count": 2,
+  "warning_count": 0,
+  "findings": [
+    {
+      "severity": "error",
+      "check": "boundary.shp.valid_geometry",
+      "message": "1 geometries are invalid."
+    },
+    {
+      "severity": "error",
+      "check": "mainlandburn.shp.crs",
+      "message": "Shapefile has no CRS. The coordinates look like lon/lat, but a renderer should explicitly set EPSG:4326."
+    }
+  ]
+}

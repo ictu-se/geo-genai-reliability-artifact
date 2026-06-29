@@ -1,0 +1,13 @@
+split,folder,z,x,y,neighbor_x,neighbor_y,direction,edge_absdiff_rgb,tile,neighbor
+val,convolutional_filter_ridge_generated,14,7980,5147,7981,5147,right,3.842448,14_7980_5147_conv_filter_ridge.png,14_7981_5147_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,7990,5114,7991,5114,right,6.852865,14_7990_5114_conv_filter_ridge.png,14_7991_5114_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,7991,5104,7992,5104,right,4.175781,14_7991_5104_conv_filter_ridge.png,14_7992_5104_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,7993,5116,7993,5117,down,4.128906,14_7993_5116_conv_filter_ridge.png,14_7993_5117_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,7995,5116,7995,5117,down,9.358073,14_7995_5116_conv_filter_ridge.png,14_7995_5117_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,7996,5109,7996,5110,down,5.398438,14_7996_5109_conv_filter_ridge.png,14_7996_5110_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,7998,5114,7999,5114,right,6.191406,14_7998_5114_conv_filter_ridge.png,14_7999_5114_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,7999,5112,8000,5112,right,6.617188,14_7999_5112_conv_filter_ridge.png,14_8000_5112_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,8000,5112,8000,5113,down,9.342448,14_8000_5112_conv_filter_ridge.png,14_8000_5113_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,8004,5091,8005,5091,right,5.363281,14_8004_5091_conv_filter_ridge.png,14_8005_5091_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,8010,5105,8010,5106,down,4.992188,14_8010_5105_conv_filter_ridge.png,14_8010_5106_conv_filter_ridge.png
+val,convolutional_filter_ridge_generated,14,8010,5114,8010,5115,down,8.559896,14_8010_5114_conv_filter_ridge.png,14_8010_5115_conv_filter_ridge.png

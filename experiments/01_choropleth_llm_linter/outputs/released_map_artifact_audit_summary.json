@@ -1,0 +1,20 @@
+{
+  "total_artifacts": 43,
+  "artifact_type": {
+    "png": 33,
+    "html": 10
+  },
+  "prompt_pattern": {
+    "advanced": 20,
+    "arcgis_reference": 3,
+    "basic": 20
+  },
+  "map_type": {
+    "choropleth": 10,
+    "dot_density": 10,
+    "graduated_symbol": 10,
+    "reference_layout": 3,
+    "interactive_choropleth": 10
+  },
+  "qa_flags": {}
+}

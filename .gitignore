@@ -1,0 +1,68 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Raw and third-party data are source-linked in data/data_manifest.md.
+data/raw/
+data/repos/
+data/metadata/
+data/failed_downloads/
+
+# Copyrighted/local reading library and downloaded templates.
+papers/
+interacttfvlatex.zip
+notes/extracted_text/
+
+# Local journal-targeting notes are not part of the public reproducibility artifact.
+manuscripts/q1_geo_genai_reliability/notes/ijgis*
+manuscripts/q1_geo_genai_reliability/notes/journal_target*
+manuscripts/q1_geo_genai_reliability/submission/ijgis*
+manuscripts/q1_geo_genai_reliability/submission/journal_target_recheck_*.md
+manuscripts/q1_geo_genai_reliability/scripts/build_journal_target_recheck.py
+manuscripts/q1_geo_genai_reliability/submission/human_validation_panels/*.html
+
+# Scratch/build staging.
+tmp/
+dist/
+manuscripts/q1_geo_genai_reliability/submission/zenodo_release_staging/
+manuscripts/q1_geo_genai_reliability/submission/zenodo_release_staging.zip
+manuscripts/q1_geo_genai_reliability/submission/zenodo_release_staging/**/*
+manuscripts/q1_geo_genai_reliability/submission/*.zip
+
+# Heavy generated run artifacts. Summary CSV/JSON/MD files remain tracked.
+experiments/**/outputs/**/*.html
+experiments/**/outputs/**/*.png
+experiments/**/outputs/**/*.jpg
+experiments/**/outputs/**/*.jpeg
+experiments/**/outputs/**/*.tif
+experiments/**/outputs/**/*.tiff
+experiments/**/outputs/**/*.gpkg
+experiments/**/outputs/**/*.shp
+experiments/**/outputs/**/*.shx
+experiments/**/outputs/**/*.dbf
+experiments/**/outputs/**/*.prj
+experiments/**/outputs/**/*.cpg
+experiments/**/outputs/**/task_outputs/
+experiments/**/outputs/**/candidate_runs/
+experiments/01_choropleth_llm_linter/outputs/candidate_run_summary.csv
+experiments/01_choropleth_llm_linter/outputs/candidate_run_summary.md
+experiments/04_geo_faithfulness_evaluator/inputs/geoguard_config_local.json
+experiments/04_geo_faithfulness_evaluator/outputs/
+experiments/05_choropleth_reliability_benchmark/outputs/scores/
+experiments/05_choropleth_reliability_benchmark/outputs/generated_code*/
+experiments/**/outputs/**/scgm_official_local_bridge/
+experiments/**/outputs/**/generated_code/
+experiments/**/outputs/**/screenshots/
+experiments/**/outputs/**/runs/
+experiments/**/outputs/**/runs_iterative_repair/
+experiments/**/outputs/**/runs_repair/
+experiments/**/outputs/**/baseline_maps/
+experiments/**/outputs/**/reference_baseline/
+experiments/**/outputs/**/scores/screenshot_qa/screenshots/
+experiments/**/outputs/**/scores/vlm_reviews/raw/
+
+# Keep manuscript-ready figures despite the global image ignores above.
+!manuscripts/q1_geo_genai_reliability/figures/*.png
+!manuscripts/q1_geo_genai_reliability/submission/latex/figures/*.png
+!manuscripts/q1_geo_genai_reliability/submission/latex/figures/*.jpg

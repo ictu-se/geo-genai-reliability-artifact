@@ -1,0 +1,66 @@
+{
+  "status": "completed",
+  "model": "TinyCNN(3->24->32->32->16->3 conv stack, sigmoid output)",
+  "model_family": "trained_cnn",
+  "low_resolution_output": "64x64x3",
+  "epochs": 14,
+  "batch_size": 12,
+  "seed": 47,
+  "device": "mps",
+  "train_candidates_before_overlap_filter": 200,
+  "train_samples_after_overlap_filter": 194,
+  "train_val_tile_overlap_excluded": 6,
+  "train_val_tile_overlap_excluded_examples": [
+    "14_7965_5111",
+    "14_7969_5110",
+    "14_7970_5124",
+    "14_7973_5126",
+    "14_7974_5109",
+    "14_7976_5122"
+  ],
+  "training_loss_first": 0.199439,
+  "training_loss_final": 0.063394,
+  "training_losses": [
+    0.199439,
+    0.122961,
+    0.081536,
+    0.06925,
+    0.065648,
+    0.065189,
+    0.073776,
+    0.066993,
+    0.063066,
+    0.065739,
+    0.064086,
+    0.063709,
+    0.06449,
+    0.063394
+  ],
+  "train_samples": 194,
+  "validation_outputs": 100,
+  "mae_rgb": {
+    "mean": 26.100397,
+    "median": 26.492479,
+    "p10": 22.626059,
+    "p90": 29.342575
+  },
+  "psnr_rgb": {
+    "mean": 18.466171,
+    "median": 18.23185,
+    "p10": 17.551096,
+    "p90": 19.283501
+  },
+  "global_ssim_luma": {
+    "mean": 0.366129,
+    "median": 0.33037,
+    "p10": 0.191427,
+    "p90": 0.579186
+  },
+  "generated_edge_pairs": 12,
+  "generated_edge_continuity": {
+    "mean": 9.221896,
+    "median": 8.02474,
+    "p10": 4.771744,
+    "p90": 14.25039
+  }
+}

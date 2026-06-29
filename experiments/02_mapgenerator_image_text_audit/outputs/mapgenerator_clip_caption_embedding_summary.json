@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "model": "openai/clip-vit-base-patch32",
+  "requested_pairs": 200,
+  "scored_pairs": 200,
+  "errors": 0,
+  "mean_embedding_score": 0.342781,
+  "min_embedding_score": 0.260293,
+  "max_embedding_score": 0.441454,
+  "local_files_only": false,
+  "error_examples": []
+}

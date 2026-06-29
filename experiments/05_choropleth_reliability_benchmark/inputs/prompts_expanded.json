@@ -1,0 +1,75 @@
+[
+  {
+    "prompt_id": "C001_static_burned_area",
+    "family": "static_basic",
+    "required_outputs": ["static_png"],
+    "prompt": "Create a static choropleth PNG of burned area by Portuguese district using the provided wildfire CSV and mainland shapefile. Include a clear title and legend."
+  },
+  {
+    "prompt_id": "C002_static_number_fires",
+    "family": "static_basic",
+    "required_outputs": ["static_png"],
+    "prompt": "Create a static choropleth PNG of number of fires by Portuguese district. Use an appropriate sequential color ramp, title, legend, and source note."
+  },
+  {
+    "prompt_id": "C003_static_full_layout",
+    "family": "cartographic_design",
+    "required_outputs": ["static_png", "diagnostic_json"],
+    "prompt": "Create a static choropleth PNG of burned area with district boundaries, title, legend, source note, and a diagnostic JSON reporting input rows, output rows, CRS, and invalid geometries."
+  },
+  {
+    "prompt_id": "C004_missing_crs_repair",
+    "family": "crs_geometry",
+    "required_outputs": ["static_png", "diagnostic_json"],
+    "prompt": "Create a choropleth map after detecting and setting missing CRS metadata for the mainland shapefile when necessary. Save a diagnostic JSON documenting CRS handling."
+  },
+  {
+    "prompt_id": "C005_geometry_repair",
+    "family": "crs_geometry",
+    "required_outputs": ["static_png", "diagnostic_json"],
+    "prompt": "Repair invalid geometries before joining and rendering a burned-area choropleth. Report invalid geometry counts before and after repair in a diagnostic JSON."
+  },
+  {
+    "prompt_id": "C006_join_diagnostics",
+    "family": "attribute_join",
+    "required_outputs": ["static_png", "diagnostic_json"],
+    "prompt": "Join wildfire attributes to district geometry using the correct key, render a burned-area choropleth, and report unmatched records and missing values in a diagnostic JSON."
+  },
+  {
+    "prompt_id": "C007_wrong_column_guard",
+    "family": "attribute_join",
+    "required_outputs": ["diagnostic_json"],
+    "prompt": "Attempt to map burned area, but first validate that the expected burned-area column exists. If the obvious column name is wrong, detect the closest available column and report the correction instead of crashing."
+  },
+  {
+    "prompt_id": "C008_quantile_classes",
+    "family": "classification",
+    "required_outputs": ["static_png", "diagnostic_json"],
+    "prompt": "Create a burned-area choropleth with five quantile classes. Save the map and a diagnostic JSON listing class breaks."
+  },
+  {
+    "prompt_id": "C009_colorblind_safe",
+    "family": "cartographic_design",
+    "required_outputs": ["static_png", "diagnostic_json"],
+    "prompt": "Create a color-blind-safe choropleth of burned area. Include title, legend, and source note, and record the chosen color ramp in a diagnostic JSON."
+  },
+  {
+    "prompt_id": "C010_interactive_tooltips",
+    "family": "interactive",
+    "required_outputs": ["interactive_html"],
+    "prompt": "Create an interactive Folium choropleth with tooltips for district, burned area, and number of fires. Save an HTML file."
+  },
+  {
+    "prompt_id": "C011_static_and_interactive",
+    "family": "multi_output",
+    "required_outputs": ["static_png", "interactive_html", "diagnostic_json"],
+    "prompt": "Create both a static PNG and an interactive HTML choropleth from the same cleaned data. Include a diagnostic JSON for CRS, geometry repair, and join status."
+  },
+  {
+    "prompt_id": "C012_time_series_report",
+    "family": "time_series",
+    "required_outputs": ["time_series_png", "diagnostic_json"],
+    "prompt": "Plot a time series of annual burned area from 2002 to 2022 and identify the maximum burned-area year in a diagnostic JSON."
+  }
+]
+

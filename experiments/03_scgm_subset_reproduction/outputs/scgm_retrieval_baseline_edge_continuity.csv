@@ -1,0 +1,13 @@
+split,folder,z,x,y,neighbor_x,neighbor_y,direction,edge_absdiff_rgb,tile,neighbor
+val,retrieval_generated,14,7980,5147,7981,5147,right,5.864583,14_7980_5147_retrieval.png,14_7981_5147_retrieval.png
+val,retrieval_generated,14,7990,5114,7991,5114,right,7.117188,14_7990_5114_retrieval.png,14_7991_5114_retrieval.png
+val,retrieval_generated,14,7991,5104,7992,5104,right,34.066406,14_7991_5104_retrieval.png,14_7992_5104_retrieval.png
+val,retrieval_generated,14,7993,5116,7993,5117,down,5.723958,14_7993_5116_retrieval.png,14_7993_5117_retrieval.png
+val,retrieval_generated,14,7995,5116,7995,5117,down,22.808594,14_7995_5116_retrieval.png,14_7995_5117_retrieval.png
+val,retrieval_generated,14,7996,5109,7996,5110,down,23.703125,14_7996_5109_retrieval.png,14_7996_5110_retrieval.png
+val,retrieval_generated,14,7998,5114,7999,5114,right,35.988281,14_7998_5114_retrieval.png,14_7999_5114_retrieval.png
+val,retrieval_generated,14,7999,5112,8000,5112,right,35.988281,14_7999_5112_retrieval.png,14_8000_5112_retrieval.png
+val,retrieval_generated,14,8000,5112,8000,5113,down,22.808594,14_8000_5112_retrieval.png,14_8000_5113_retrieval.png
+val,retrieval_generated,14,8004,5091,8005,5091,right,3.302083,14_8004_5091_retrieval.png,14_8005_5091_retrieval.png
+val,retrieval_generated,14,8010,5105,8010,5106,down,28.343750,14_8010_5105_retrieval.png,14_8010_5106_retrieval.png
+val,retrieval_generated,14,8010,5114,8010,5115,down,15.361979,14_8010_5114_retrieval.png,14_8010_5115_retrieval.png

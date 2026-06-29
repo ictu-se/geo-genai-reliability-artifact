@@ -1,0 +1,43 @@
+{
+  "model": "StandardScaler + Ridge(alpha=2.5) over fixed convolutional RS filter bank",
+  "input_feature_dimension": 52,
+  "training_pixel_samples": 794624,
+  "low_resolution_output": "64x64x3",
+  "train_candidates_before_overlap_filter": 200,
+  "train_samples_after_overlap_filter": 194,
+  "train_val_tile_overlap_excluded": 6,
+  "train_val_tile_overlap_excluded_examples": [
+    "14_7965_5111",
+    "14_7969_5110",
+    "14_7970_5124",
+    "14_7973_5126",
+    "14_7974_5109",
+    "14_7976_5122"
+  ],
+  "train_samples": 194,
+  "validation_outputs": 100,
+  "mae_rgb": {
+    "mean": 19.14752,
+    "median": 19.991188,
+    "p10": 14.010356,
+    "p90": 22.424826
+  },
+  "psnr_rgb": {
+    "mean": 20.752409,
+    "median": 20.326809,
+    "p10": 18.893551,
+    "p90": 23.348072
+  },
+  "global_ssim_luma": {
+    "mean": 0.347422,
+    "median": 0.34729,
+    "p10": 0.069325,
+    "p90": 0.599801
+  },
+  "generated_edge_continuity": {
+    "mean": 6.235243,
+    "median": 5.794922,
+    "p10": 4.133593,
+    "p90": 9.264193
+  }
+}

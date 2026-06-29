@@ -1,0 +1,261 @@
+{
+  "data_dir": "data/repos/Materials-for-Creating-maps-by-Artificial-Intelligence/data_choropleth",
+  "csv": {
+    "file": "data/repos/Materials-for-Creating-maps-by-Artificial-Intelligence/data_choropleth/MCD64.006.yearly-ba-nf.2002-2022.PRT_Portugal.csv",
+    "rows": 21,
+    "columns": [
+      "Year",
+      "Burned Area [ha]",
+      "Number of Fires"
+    ],
+    "dtypes": {
+      "Year": "int64",
+      "Burned Area [ha]": "float64",
+      "Number of Fires": "int64"
+    },
+    "missing_values": {
+      "Year": 0,
+      "Burned Area [ha]": 0,
+      "Number of Fires": 0
+    },
+    "numeric_summary": {
+      "Year": {
+        "count": 21.0,
+        "mean": 2012.0,
+        "std": 6.2048368229954285,
+        "min": 2002.0,
+        "25%": 2007.0,
+        "50%": 2012.0,
+        "75%": 2017.0,
+        "max": 2022.0
+      },
+      "Burned Area [ha]": {
+        "count": 21.0,
+        "mean": 124513.27380952382,
+        "std": 145186.34191917712,
+        "min": 6804.68,
+        "25%": 36234.38,
+        "50%": 68926.9,
+        "75%": 151076.77,
+        "max": 523058.79
+      },
+      "Number of Fires": {
+        "count": 21.0,
+        "mean": 244.57142857142858,
+        "std": 161.08400647754308,
+        "min": 49.0,
+        "25%": 95.0,
+        "50%": 227.0,
+        "75%": 360.0,
+        "max": 688.0
+      }
+    },
+    "preview": [
+      {
+        "Year": 2002,
+        "Burned Area [ha]": 101233.03,
+        "Number of Fires": 437
+      },
+      {
+        "Year": 2003,
+        "Burned Area [ha]": 473086.25,
+        "Number of Fires": 364
+      },
+      {
+        "Year": 2004,
+        "Burned Area [ha]": 107522.53,
+        "Number of Fires": 227
+      },
+      {
+        "Year": 2005,
+        "Burned Area [ha]": 332785.34,
+        "Number of Fires": 688
+      },
+      {
+        "Year": 2006,
+        "Burned Area [ha]": 68926.9,
+        "Number of Fires": 224
+      },
+      {
+        "Year": 2007,
+        "Burned Area [ha]": 17000.97,
+        "Number of Fires": 95
+      },
+      {
+        "Year": 2008,
+        "Burned Area [ha]": 6804.68,
+        "Number of Fires": 59
+      },
+      {
+        "Year": 2009,
+        "Burned Area [ha]": 66737.38,
+        "Number of Fires": 360
+      }
+    ]
+  },
+  "shapefiles": {
+    "boundary": {
+      "file": "data/repos/Materials-for-Creating-maps-by-Artificial-Intelligence/data_choropleth/boundary.shp",
+      "rows": 1,
+      "columns": [
+        "GID_0",
+        "NAME_0",
+        "GID_1",
+        "NAME_1",
+        "VARNAME_1",
+        "NL_NAME_1",
+        "TYPE_1",
+        "ENGTYPE_1",
+        "CC_1",
+        "HASC_1",
+        "BUFF_DIST",
+        "ORIG_FID",
+        "geometry"
+      ],
+      "crs": "EPSG:4326",
+      "geometry_types": {
+        "MultiPolygon": 1
+      },
+      "bounds": [
+        -9.570326674543367,
+        36.94295004577634,
+        -6.165161464628397,
+        42.172316275597495
+      ],
+      "invalid_geometries": 1,
+      "empty_geometries": 0,
+      "non_geometry_preview": [
+        {
+          "GID_0": "PRT",
+          "NAME_0": "Portugal",
+          "GID_1": "PRT.1_1",
+          "NAME_1": "Aveiro",
+          "VARNAME_1": null,
+          "NL_NAME_1": null,
+          "TYPE_1": "Distrito",
+          "ENGTYPE_1": "District",
+          "CC_1": "01",
+          "HASC_1": "PT.AV",
+          "BUFF_DIST": 2000.0,
+          "ORIG_FID": 0
+        }
+      ]
+    },
+    "mainlandburn": {
+      "file": "data/repos/Materials-for-Creating-maps-by-Artificial-Intelligence/data_choropleth/mainlandburn.shp",
+      "rows": 18,
+      "columns": [
+        "GID_0",
+        "NAME_0",
+        "GID_1",
+        "NAME_1",
+        "VARNAME_1",
+        "NL_NAME_1",
+        "TYPE_1",
+        "ENGTYPE_1",
+        "CC_1",
+        "HASC_1",
+        "Field",
+        "Region",
+        "Burned_Are",
+        "of_Fires",
+        "geometry"
+      ],
+      "crs": null,
+      "geometry_types": {
+        "MultiPolygon": 9,
+        "Polygon": 9
+      },
+      "bounds": [
+        -9.547081949999999,
+        36.96097183,
+        -6.18914223,
+        42.15431595
+      ],
+      "invalid_geometries": 0,
+      "empty_geometries": 0,
+      "non_geometry_preview": [
+        {
+          "GID_0": "PRT",
+          "NAME_0": "Portugal",
+          "GID_1": "PRT.1_1",
+          "NAME_1": "Aveiro",
+          "VARNAME_1": null,
+          "NL_NAME_1": null,
+          "TYPE_1": "Distrito",
+          "ENGTYPE_1": "District",
+          "CC_1": "01",
+          "HASC_1": "PT.AV",
+          "Field": 2756.89,
+          "Region": "Aveiro",
+          "Burned_Are": 1.586,
+          "of_Fires": 0.003
+        },
+        {
+          "GID_0": "PRT",
+          "NAME_0": "Portugal",
+          "GID_1": "PRT.3_1",
+          "NAME_1": "Beja",
+          "VARNAME_1": null,
+          "NL_NAME_1": null,
+          "TYPE_1": "Distrito",
+          "ENGTYPE_1": "District",
+          "CC_1": "02",
+          "HASC_1": "PT.BE",
+          "Field": 10262.8,
+          "Region": "Beja",
+          "Burned_Are": 0.545,
+          "of_Fires": 0.001
+        },
+        {
+          "GID_0": "PRT",
+          "NAME_0": "Portugal",
+          "GID_1": "PRT.4_1",
+          "NAME_1": "Braga",
+          "VARNAME_1": null,
+          "NL_NAME_1": null,
+          "TYPE_1": "Distrito",
+          "ENGTYPE_1": "District",
+          "CC_1": "03",
+          "HASC_1": "PT.BR",
+          "Field": 2704.12,
+          "Region": "Braga",
+          "Burned_Are": 1.475,
+          "of_Fires": 0.01
+        },
+        {
+          "GID_0": "PRT",
+          "NAME_0": "Portugal",
+          "GID_1": "PRT.5_1",
+          "NAME_1": "Bragan\u00e7a",
+          "VARNAME_1": "Braganza",
+          "NL_NAME_1": null,
+          "TYPE_1": "Distrito",
+          "ENGTYPE_1": "District",
+          "CC_1": "04",
+          "HASC_1": "PT.BA",
+          "Field": 6596.61,
+          "Region": "Bragan\u00e7a",
+          "Burned_Are": 0.91,
+          "of_Fires": 0.002
+        },
+        {
+          "GID_0": "PRT",
+          "NAME_0": "Portugal",
+          "GID_1": "PRT.6_1",
+          "NAME_1": "Castelo Branco",
+          "VARNAME_1": null,
+          "NL_NAME_1": null,
+          "TYPE_1": "Distrito",
+          "ENGTYPE_1": "District",
+          "CC_1": "05",
+          "HASC_1": "PT.CB",
+          "Field": 6626.81,
+          "Region": "Castelo Branco",
+          "Burned_Are": 1.937,
+          "of_Fires": 0.001
+        }
+      ]
+    }
+  }
+}

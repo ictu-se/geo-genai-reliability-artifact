@@ -1,0 +1,27 @@
+{
+  "model": "minicpm-v:latest",
+  "reviewed_pairs": 20,
+  "by_split": {
+    "MGEval": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 0,
+      "mean_proxy_fidelity_score": 0.741,
+      "verdict_counts": {
+        "error": 10
+      },
+      "unsupported_claim_rows": 0,
+      "omission_rows": 0
+    },
+    "MapTrain": {
+      "reviewed_pairs": 10,
+      "mean_vlm_alignment_score": 0.8,
+      "mean_proxy_fidelity_score": 0.667,
+      "verdict_counts": {
+        "partly_supported": 1,
+        "error": 9
+      },
+      "unsupported_claim_rows": 0,
+      "omission_rows": 1
+    }
+  }
+}

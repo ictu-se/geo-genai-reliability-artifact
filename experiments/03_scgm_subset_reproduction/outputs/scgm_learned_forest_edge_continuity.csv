@@ -1,0 +1,13 @@
+split,folder,z,x,y,neighbor_x,neighbor_y,direction,edge_absdiff_rgb,tile,neighbor
+val,learned_forest_generated,14,7980,5147,7981,5147,right,3.641927,14_7980_5147_learned_forest.png,14_7981_5147_learned_forest.png
+val,learned_forest_generated,14,7990,5114,7991,5114,right,4.984375,14_7990_5114_learned_forest.png,14_7991_5114_learned_forest.png
+val,learned_forest_generated,14,7991,5104,7992,5104,right,2.635417,14_7991_5104_learned_forest.png,14_7992_5104_learned_forest.png
+val,learned_forest_generated,14,7993,5116,7993,5117,down,6.071615,14_7993_5116_learned_forest.png,14_7993_5117_learned_forest.png
+val,learned_forest_generated,14,7995,5116,7995,5117,down,5.000000,14_7995_5116_learned_forest.png,14_7995_5117_learned_forest.png
+val,learned_forest_generated,14,7996,5109,7996,5110,down,4.231771,14_7996_5109_learned_forest.png,14_7996_5110_learned_forest.png
+val,learned_forest_generated,14,7998,5114,7999,5114,right,4.020833,14_7998_5114_learned_forest.png,14_7999_5114_learned_forest.png
+val,learned_forest_generated,14,7999,5112,8000,5112,right,4.134115,14_7999_5112_learned_forest.png,14_8000_5112_learned_forest.png
+val,learned_forest_generated,14,8000,5112,8000,5113,down,4.161458,14_8000_5112_learned_forest.png,14_8000_5113_learned_forest.png
+val,learned_forest_generated,14,8004,5091,8005,5091,right,6.401042,14_8004_5091_learned_forest.png,14_8005_5091_learned_forest.png
+val,learned_forest_generated,14,8010,5105,8010,5106,down,5.274740,14_8010_5105_learned_forest.png,14_8010_5106_learned_forest.png
+val,learned_forest_generated,14,8010,5114,8010,5115,down,4.785156,14_8010_5114_learned_forest.png,14_8010_5115_learned_forest.png

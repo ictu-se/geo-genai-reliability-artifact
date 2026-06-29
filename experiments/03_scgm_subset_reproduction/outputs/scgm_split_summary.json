@@ -1,0 +1,40 @@
+[
+  {
+    "split": "train",
+    "rs_256": 135572,
+    "map_256": 135572,
+    "ref_scale_2_256": 130701,
+    "ref_scale_4_256": 115595,
+    "rs_map_intersection": 135572,
+    "rs_missing_map": 0,
+    "map_missing_rs": 0,
+    "rs_with_ref_scale_2": 130701,
+    "rs_with_ref_scale_4": 115595,
+    "zoom_distribution_rs": {
+      "15": 15106,
+      "17": 40555,
+      "16": 30040,
+      "18": 45000,
+      "14": 4871
+    }
+  },
+  {
+    "split": "val",
+    "rs_256": 1473,
+    "map_256": 1473,
+    "ref_scale_2_256": 1192,
+    "ref_scale_4_256": 900,
+    "rs_map_intersection": 1473,
+    "rs_missing_map": 0,
+    "map_missing_rs": 0,
+    "rs_with_ref_scale_2": 1192,
+    "rs_with_ref_scale_4": 900,
+    "zoom_distribution_rs": {
+      "16": 300,
+      "14": 281,
+      "15": 292,
+      "17": 300,
+      "18": 300
+    }
+  }
+]

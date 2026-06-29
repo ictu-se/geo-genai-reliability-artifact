@@ -1,0 +1,43 @@
+{
+  "model": "RandomForestRegressor(n_estimators=40, max_depth=12, min_samples_leaf=2)",
+  "input_feature_dimension": 1039,
+  "output_dimension": 768,
+  "low_resolution_output": "16x16x3",
+  "train_candidates_before_overlap_filter": 200,
+  "train_samples_after_overlap_filter": 194,
+  "train_val_tile_overlap_excluded": 6,
+  "train_val_tile_overlap_excluded_examples": [
+    "14_7965_5111",
+    "14_7969_5110",
+    "14_7970_5124",
+    "14_7973_5126",
+    "14_7974_5109",
+    "14_7976_5122"
+  ],
+  "train_samples": 194,
+  "validation_outputs": 100,
+  "mae_rgb": {
+    "mean": 17.362703,
+    "median": 17.028126,
+    "p10": 12.440184,
+    "p90": 23.228569
+  },
+  "psnr_rgb": {
+    "mean": 21.608828,
+    "median": 21.320431,
+    "p10": 19.174232,
+    "p90": 23.855383
+  },
+  "global_ssim_luma": {
+    "mean": 0.409008,
+    "median": 0.369864,
+    "p10": 0.193912,
+    "p90": 0.67811
+  },
+  "generated_edge_continuity": {
+    "mean": 4.611871,
+    "median": 4.508463,
+    "p10": 3.679818,
+    "p90": 5.991928
+  }
+}

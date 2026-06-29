@@ -1,0 +1,135 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\normalfont{#1}}
+\providecommand{\urlprefix}{Available from: }
+
+\bibitem[Du\emph{ et~al.}(2024)]{Du_2024}
+Du, X., \emph{et~al.}, 2024. Evaluating large language models in class-level
+  code generation. \emph{In}: \emph{Proceedings of the IEEE/ACM 46th
+  International Conference on Software Engineering}.  1--13.
+  \urlprefix\url{https://doi.org/10.1145/3597503.3639219}.
+
+\bibitem[Gazzola\emph{ et~al.}(2019)]{Gazzola_2019}
+Gazzola, L., Micucci, D., and Mariani, L., 2019. Automatic software repair: A
+  survey. \emph{IEEE Transactions on Software Engineering}, 45 (1),  34--67.
+  \urlprefix\url{https://doi.org/10.1109/TSE.2017.2755013}.
+
+\bibitem[Gebru\emph{ et~al.}(2021)]{Gebru2021Datasheets}
+Gebru, T., \emph{et~al.}, 2021. Datasheets for datasets. \emph{Communications
+  of the ACM}, 64 (12),  86--92.
+  \urlprefix\url{https://doi.org/10.1145/3458723}.
+
+\bibitem[Goodchild(1992)]{Goodchild_1992}
+Goodchild, M.F., 1992. Geographical information science. \emph{International
+  Journal of Geographical Information Systems}, 6 (1),  31--45.
+  \urlprefix\url{https://doi.org/10.1080/02693799208901893}.
+
+\bibitem[Harley(1989)]{Harley_1989}
+Harley, J.B., 1989. Deconstructing the map. \emph{Cartographica}, 26 (2),
+  1--20. \urlprefix\url{https://doi.org/10.3138/E635-7827-1757-9T53}.
+
+\bibitem[Janowicz\emph{ et~al.}(2019)]{Janowicz_2019}
+Janowicz, K., \emph{et~al.}, 2019. {GeoAI}: Spatially explicit artificial
+  intelligence techniques for geographic knowledge discovery and beyond.
+  \emph{International Journal of Geographical Information Science}, 34 (4),
+  625--636. \urlprefix\url{https://doi.org/10.1080/13658816.2019.1684500}.
+
+\bibitem[Jiang\emph{ et~al.}(2026)]{Jiang_2026}
+Jiang, J., \emph{et~al.}, 2026. A survey on large language models for code
+  generation. \emph{ACM Transactions on Software Engineering and Methodology},
+  35 (2),  1--72. \urlprefix\url{https://doi.org/10.1145/3747588}.
+
+\bibitem[Kang\emph{ et~al.}(2024)]{Kang_2024}
+Kang, Y., Gao, S., and Roth, R.E., 2024. Artificial intelligence studies in
+  cartography: A review and synthesis of methods, applications, and ethics.
+  \emph{Cartography and Geographic Information Science}, 51 (4),  599--630.
+  \urlprefix\url{https://doi.org/10.1080/15230406.2023.2295943}.
+
+\bibitem[Le~Goues\emph{ et~al.}(2012)]{Le_Goues_2012}
+Le~Goues, C., \emph{et~al.}, 2012. {GenProg}: A generic method for automatic
+  software repair. \emph{IEEE Transactions on Software Engineering}, 38 (1),
+  54--72. \urlprefix\url{https://doi.org/10.1109/TSE.2011.104}.
+
+\bibitem[Li\emph{ et~al.}(2022)]{Li_2022}
+Li, Y., \emph{et~al.}, 2022. Competition-level code generation with
+  {AlphaCode}. \emph{Science}, 378 (6624),  1092--1097.
+  \urlprefix\url{https://doi.org/10.1126/science.abq1158}.
+
+\bibitem[Ma\emph{ et~al.}(2019)]{Ma_2019}
+Ma, L., \emph{et~al.}, 2019. Deep learning in remote sensing applications: A
+  meta-analysis and review. \emph{ISPRS Journal of Photogrammetry and Remote
+  Sensing}, 152,  166--177.
+  \urlprefix\url{https://doi.org/10.1016/j.isprsjprs.2019.04.015}.
+
+\bibitem[Mitchell\emph{ et~al.}(2019)]{Mitchell2019ModelCards}
+Mitchell, M., \emph{et~al.}, 2019. Model cards for model reporting. \emph{In}:
+  \emph{Proceedings of the Conference on Fairness, Accountability, and
+  Transparency}.  220--229.
+  \urlprefix\url{https://doi.org/10.1145/3287560.3287596}.
+
+\bibitem[Monperrus(2018)]{Monperrus_2018}
+Monperrus, M., 2018. Automatic software repair: A bibliography. \emph{ACM
+  Computing Surveys}, 51 (1),  1--24.
+  \urlprefix\url{https://doi.org/10.1145/3105906}.
+
+\bibitem[Ni\emph{ et~al.}(2024)]{Ni_2024}
+Ni, A., \emph{et~al.}, 2024. {L2CEval}: Evaluating language-to-code generation
+  capabilities of large language models. \emph{Transactions of the Association
+  for Computational Linguistics}, 12,  1311--1329.
+  \urlprefix\url{https://doi.org/10.1162/tacl{\_}a{\_}00705}.
+
+\bibitem[Pannoon and Netek(2025)]{PannoonNetek_2025_Choropleth}
+Pannoon, P. and Netek, R., 2025. Creating choropleth maps by artificial
+  intelligence: Case study on chatgpt-4. \emph{ISPRS International Journal of
+  Geo-Information}, 14, 486.
+  \urlprefix\url{https://doi.org/10.3390/ijgi14120486}.
+
+\bibitem[Roth(2013)]{Roth_2013}
+Roth, R.E., 2013. Interactive maps: What we know and what we need to know.
+  \emph{Journal of Spatial Information Science}, 6.
+  \urlprefix\url{https://doi.org/10.5311/JOSIS.2013.6.105}.
+
+\bibitem[Roth(2015)]{Roth_2015}
+Roth, R.E., 2015. Interactivity and cartography: A contemporary perspective on
+  user interface and user experience design from geospatial professionals.
+  \emph{Cartographica}, 50 (2),  94--115.
+  \urlprefix\url{https://doi.org/10.3138/cart.50.2.2427}.
+
+\bibitem[Wang\emph{ et~al.}(2025)]{Wang_2025_CartoAgent}
+Wang, C., \emph{et~al.}, 2025. {CartoAgent}: A multimodal large language
+  model-powered multi-agent cartographic framework for map style transfer and
+  evaluation. \emph{International Journal of Geographical Information Science},
+  39 (9),  1904--1937.
+  \urlprefix\url{https://doi.org/10.1080/13658816.2025.2507844}.
+
+\bibitem[Xu\emph{ et~al.}(2022)]{Xu_2022}
+Xu, F.F., \emph{et~al.}, 2022. A systematic evaluation of large language models
+  of code. \emph{In}: \emph{Proceedings of the 6th ACM SIGPLAN International
+  Symposium on Machine Programming}.  1--10.
+  \urlprefix\url{https://doi.org/10.1145/3520312.3534862}.
+
+\bibitem[Yang\emph{ et~al.}(2025)]{Yang_2025_MapColorAI}
+Yang, N., \emph{et~al.}, 2025. {MapColorAI}: Designing contextually relevant
+  choropleth map color schemes using a large language model. \emph{Cartography
+  and Geographic Information Science}, 53 (4),  479--497.
+  \urlprefix\url{https://doi.org/10.1080/15230406.2025.2531055}.
+
+\bibitem[Zhang\emph{ et~al.}(2025)]{Zhang_2025_MapGenerator}
+Zhang, W., \emph{et~al.}, 2025. {MapGenerator}: A framework for learning a
+  diffusion model for text promptable map generation. \emph{Cartography and
+  Geographic Information Science},  1--23.
+  \urlprefix\url{https://doi.org/10.1080/15230406.2025.2587273}.
+
+\bibitem[Zhang\emph{ et~al.}(2024)]{Zhang_2024_MapGPT}
+Zhang, Y., \emph{et~al.}, 2024. {MapGPT}: An autonomous framework for mapping
+  by integrating large language model and cartographic tools. \emph{Cartography
+  and Geographic Information Science}, 51 (6),  717--743.
+  \urlprefix\url{https://doi.org/10.1080/15230406.2024.2404868}.
+
+\bibitem[Zhu\emph{ et~al.}(2017)]{Zhu_2017}
+Zhu, X.X., \emph{et~al.}, 2017. Deep learning in remote sensing: A
+  comprehensive review and list of resources. \emph{IEEE Geoscience and Remote
+  Sensing Magazine}, 5 (4),  8--36.
+  \urlprefix\url{https://doi.org/10.1109/MGRS.2017.2762307}.
+
+\end{thebibliography}

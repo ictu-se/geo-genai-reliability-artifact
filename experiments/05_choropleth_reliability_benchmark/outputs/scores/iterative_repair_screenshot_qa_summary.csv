@@ -1,0 +1,13 @@
+checked,content_pass_rate_existing,content_qa_pass,existing_or_rendered,html_rendered,kind,pass_rate_existing,repair_model,screenshot_qa_pass
+23,0.000,0,0,0,interactive_html,0.000,deepseek-coder_6.7b,0
+23,0.500,1,2,,static_png,1.000,deepseek-coder_6.7b,2
+23,1.000,1,1,,time_series_png,1.000,deepseek-coder_6.7b,1
+110,1.000,1,1,1,interactive_html,1.000,qwen2.5-coder_14b,1
+110,0.833,5,6,,static_png,1.000,qwen2.5-coder_14b,6
+110,0.500,3,6,,time_series_png,1.000,qwen2.5-coder_14b,6
+89,0.625,5,8,5,interactive_html,0.625,qwen2.5-coder_32b,5
+89,0.957,22,23,,static_png,1.000,qwen2.5-coder_32b,23
+89,1.000,4,4,,time_series_png,1.000,qwen2.5-coder_32b,4
+113,0.250,1,4,1,interactive_html,0.250,qwen2.5-coder_7b,1
+113,0.500,3,6,,static_png,1.000,qwen2.5-coder_7b,6
+113,1.000,2,2,,time_series_png,1.000,qwen2.5-coder_7b,2

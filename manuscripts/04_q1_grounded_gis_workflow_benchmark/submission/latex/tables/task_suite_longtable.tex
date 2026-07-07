@@ -1,0 +1,42 @@
+\begin{longtable}{p{0.08\linewidth}p{0.18\linewidth}p{0.28\linewidth}p{0.34\linewidth}}
+\caption{Complete 30-task workflow-specification suite.}\label{tab:task-suite-long}\\
+\toprule
+Task & Family & Required fields & Output artifact \\
+\midrule
+\endfirsthead
+\toprule
+Task & Family & Required fields & Output artifact \\
+\midrule
+\endhead
+T001 & Buffer & name & T001\_buffer\_hospitals.gpkg \\
+T002 & Buffer & name & T002\_buffer\_hospitals\_2500m.gpkg \\
+T003 & Buffer & None & T003\_buffer\_hospitals\_dissolved.gpkg \\
+T004 & Buffer & name, source\_id & T004\_buffer\_hospitals\_named.gpkg \\
+T005 & Buffer & name, area\_m2 & T005\_buffer\_hospitals\_area.gpkg \\
+T006 & Overlay & tract\_id & T006\_flood\_tract\_overlay.gpkg \\
+T007 & Overlay & tract\_id, flood\_area\_m2 & T007\_flood\_tract\_overlay\_area.gpkg \\
+T008 & Overlay & tract\_id, sfha\_tf & T008\_sfha\_overlay.gpkg \\
+T009 & Overlay & tract\_id, flood\_area\_m2 & T009\_flood\_summary\_by\_tract.gpkg \\
+T010 & Overlay & tract\_id, flood\_area\_m2 & T010\_high\_flood\_tracts.gpkg \\
+T011 & Point count & tract\_id, school\_count & T011\_school\_count\_by\_tract.gpkg \\
+T012 & Point count & tract\_id, hospital\_count & T012\_hospital\_count\_by\_tract.gpkg \\
+T013 & Point count & tract\_id, school\_count, schools\_per\_km2 & T013\_school\_density\_by\_tract.gpkg \\
+T014 & Point count & tract\_id, school\_count & T014\_tracts\_with\_schools.gpkg \\
+T015 & Point count & tract\_id, school\_count, hospital\_count & T015\_school\_hospital\_counts.gpkg \\
+T016 & Raster & None & T016\_temperature\_clip.tif \\
+T017 & Raster & None & T017\_temperature\_clip\_nodata.tif \\
+T018 & Raster & None & T018\_temperature\_clip\_boundary\_crs.tif \\
+T019 & Raster & None & T019\_temperature\_clip\_compressed.tif \\
+T020 & Raster & None & T020\_temperature\_clip\_metadata.tif \\
+T021 & Zonal & tract\_id, temp\_mean, temp\_sum & T021\_temperature\_zonal\_stats.gpkg \\
+T022 & Zonal & tract\_id, temp\_mean & T022\_temperature\_mean\_by\_tract.gpkg \\
+T023 & Zonal & tract\_id, temp\_mean, temp\_sum & T023\_temperature\_stats\_hot\_tracts.gpkg \\
+T024 & Zonal & tract\_id, temp\_mean, school\_count & T024\_temperature\_school\_join.gpkg \\
+T025 & Zonal & tract\_id, temp\_mean, school\_count, flood\_area\_m2 & T025\_temperature\_flood\_school.gpkg \\
+T026 & Choropleth & None & T026\_temperature\_choropleth.png \\
+T027 & Choropleth & None & T027\_school\_density\_choropleth.png \\
+T028 & Choropleth & None & T028\_flood\_exposure\_choropleth.png \\
+T029 & Choropleth & None & T029\_hospital\_access\_choropleth.png \\
+T030 & Choropleth & None & T030\_multivariate\_risk\_map.png \\
+\bottomrule
+\end{longtable}

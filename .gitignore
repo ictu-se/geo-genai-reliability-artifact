@@ -61,6 +61,7 @@ experiments/**/outputs/**/baseline_maps/
 experiments/**/outputs/**/reference_baseline/
 experiments/**/outputs/**/scores/screenshot_qa/screenshots/
 experiments/**/outputs/**/scores/vlm_reviews/raw/
+experiments/08_workflow_contract_execution/outputs/artifacts/
 
 # Keep manuscript-ready figures despite the global image ignores above.
 !manuscripts/q1_geo_genai_reliability/figures/*.png

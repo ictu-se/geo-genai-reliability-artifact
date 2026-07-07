@@ -1,0 +1,7 @@
+{
+  "repair_model": "qwen2.5-coder:32b",
+  "cases": 40,
+  "attempt_rows": 89,
+  "completed_cases": 25,
+  "safe_attempts": 89
+}

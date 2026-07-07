@@ -45,6 +45,7 @@ Full planning benchmark, 12 models x 3 modes x 30 tasks:
 ```bash
 python3 experiments/07_grounded_gis_workflow_benchmark/scripts/run_model_panel.py --timeout 300
 python3 experiments/07_grounded_gis_workflow_benchmark/scripts/aggregate_scores.py
+python3 experiments/07_grounded_gis_workflow_benchmark/scripts/build_gsis_extension_analysis.py
 ```
 
 ## Outputs
@@ -55,4 +56,6 @@ python3 experiments/07_grounded_gis_workflow_benchmark/scripts/aggregate_scores.
 - `outputs/scores/<model>/workflow_summary.csv`
 - `outputs/scores/model_comparison_summary.csv`
 - `outputs/scores/model_comparison_summary.md`
-
+- `outputs/gsis_extension/bootstrap_mode_effects.csv`
+- `outputs/gsis_extension/execution_readiness_by_mode.csv`
+- `outputs/gsis_extension/execution_readiness_by_family.csv`
